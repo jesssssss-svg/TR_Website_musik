@@ -1,0 +1,61 @@
+/* ARTIST SECTION */
+.artist-section {
+    padding: 60px 8%;
+}
+
+.artist-section h2 {
+    font-size: 30px;
+}
+
+.artist-section h2 span {
+    color: #c084fc;
+}
+
+.artist-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    margin-top: 35px;
+}
+
+.artist-card {
+    background-color: #20192d;
+    padding: 20px 15px;
+    border-radius: 12px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.artist-card:hover {
+    transform: translateY(-8px);
+}
+
+.artist-card img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #a855f7;
+}
+
+.artist-card h3 {
+    margin-top: 15px;
+}
+
+.artist-card p {
+    color: #aaa;
+    margin-top: 8px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .artist-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .artist-container {
+        grid-template-columns: 1fr;
+    }
+}
