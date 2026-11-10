@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOOPIFY | Katalog Genre Musik</title>
+    <link rel="stylesheet" href="genre1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Header / Navbar dengan Search Bar di Kanan Atas -->
+    <header class="navbar">
+    <div class="logo-container">
+        <!-- Logo LOOPIFY dengan warna gradasi persis SS -->
+        <span class="logo-text">LOOP<span>IFY</span>
+    </div>
+
+    <div class="search-container">
+        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+        <input type="text" id="searchInput" placeholder="Search music..." class="search-input">
+    </div>
+</header>
+
+    <!-- Konten Utama -->
+    <main class="main-container">
+        <section class="hero-section">
+    <p class="hero-subtitle">WELCOME TO LOOPIFY</p>
+    <h1>Discover Your <span class="loopify-title">Music</span></h1>
+    <p>Explore your favorite music, discover new artists, and find the perfect playlist for every mood.</p>
+</section>
+
+        <!-- Tombol Filter Genre (Interaktif) -->
+        <div class="genre-filters">
+            <button onclick="filterGenre('all')" class="filter-btn active">All Genre</button>
+            <button onclick="filterGenre('rock')" class="filter-btn">Rock</button>
+            <button onclick="filterGenre('jazz')" class="filter-btn">Jazz</button>
+            <button onclick="filterGenre('pop')" class="filter-btn">Pop</button>
+            <button onclick="filterGenre('dangdut')" class="filter-btn">Dangdut / Hipdut</button>
+        </div>
+
+        <!-- Grid Kartu Musik (Setiap card diberi attribute data-genre) -->
+        <section class="music-grid" id="songGrid">
+            
+            <!-- Kartu 1: Rock -->
+            <div class="song-card" data-genre="rock">
+                <div class="image-box">
+                    <img src="https://images.unsplash.com/photo-1498038432885-c6f3f1b912ee?auto=format&fit=crop&q=80&w=500" alt="Rock">
+                </div>
+                <div class="song-info">
+                    <h3>Electric Anthem</h3>
+                    <p class="artist-name">The Thunderers</p>
+                    <div class="card-footer">
+                        <span class="genre-tag rock">Rock</span>
+                        <span class="duration">3:45</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kartu 2: Jazz -->
+            <div class="song-card" data-genre="jazz">
+                <div class="image-box">
+                    <img src="https://images.unsplash.com/photo-1511192336575-5a79af67a629?auto=format&fit=crop&q=80&w=500" alt="Jazz">
+                </div>
+                <div class="song-info">
+                    <h3>Midnight Lounge</h3>
+                    <p class="artist-name">Velvet Notes</p>
+                    <div class="card-footer">
+                        <span class="genre-tag jazz">Jazz</span>
+                        <span class="duration">4:12</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kartu 3: Pop -->
+            <div class="song-card" data-genre="pop">
+                <div class="image-box">
+                    <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&q=80&w=500" alt="Pop">
+                </div>
+                <div class="song-info">
+                    <h3>Starlight Dreams</h3>
+                    <p class="artist-name">Luna Ray</p>
+                    <div class="card-footer">
+                        <span class="genre-tag pop">Pop</span>
+                        <span class="duration">3:05</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kartu 4: Dangdut / Hipdut -->
+            <div class="song-card" data-genre="dangdut">
+                <div class="image-box">
+                    <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&q=80&w=500" alt="Dangdut">
+                </div>
+                <div class="song-info">
+                    <h3>Goyang Asyik (Hipdut)</h3>
+                    <p class="artist-name">Siti & Orkes Ria</p>
+                    <div class="card-footer">
+                        <span class="genre-tag dangdut">Dangdut</span>
+                        <span class="duration">3:50</span>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    
+
+    <!-- JavaScript untuk Menjalankan Filter & Search Bar -->
+    <script>
+        // 1. Fungsi Filter Genre saat tombol genre diklik
+        function filterGenre(genre) {
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            const cards = document.querySelectorAll('.song-card');
+            cards.forEach(card => {
+                if (genre === 'all' || card.dataset.genre === genre) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // 2. Fungsi Live Search (Mencari lagu atau artis saat diketik)
+        document.getElementById('searchInput').addEventListener('input', function(e) {
+            const term = e.target.value.toLowerCase();
+            const cards = document.querySelectorAll('.song-card');
+            
+            cards.forEach(card => {
+                const title = card.querySelector('h3').innerText.toLowerCase();
+                const artist = card.querySelector('.artist-name').innerText.toLowerCase();
+                
+                if (title.includes(term) || artist.includes(term)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

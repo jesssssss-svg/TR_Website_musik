@@ -1,0 +1,238 @@
+/* Pengaturan Dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Background biru gelap keunguan persis seperti SS */
+body {
+    background: linear-gradient(135deg, #0f0c29, #120e38, #0a081d);
+    background-attachment: fixed;
+    color: #f8fafc;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: rgba(10, 8, 29, 0.7);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Font & Warna LOOPIFY persis seperti SS (Gradasi Pink/Ungu Muda ke Putih) */
+.logo-text {
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    background: linear-gradient(90deg, #edeaf0 0%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+}
+
+.logo-text span {
+   font-size: 26px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    background: linear-gradient(90deg, #c084fc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+}
+
+/* Kotak Pencarian (Search Bar di Kanan Atas) */
+.search-container {
+    position: relative;
+    width: 260px;
+}
+
+.search-input {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    padding: 8px 16px 8px 38px;
+    font-size: 13px;
+    color: #f8fafc;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.search-input:focus {
+    border-color: #c084fc;
+}
+
+.search-icon {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #94a3b8;
+    font-size: 13px;
+}
+
+/* Hero Section / Banner Utama Biru Keunguan */
+.main-container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 40px 20px;
+    flex: 1;
+}
+
+.hero-section {
+    background: linear-gradient(135deg, #1e1b4b, #2e1065, #0f172a);
+    padding: 45px;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.hero-subtitle {
+    color: #c084fc;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+}
+
+.hero-section h1 {
+    font-size: 40px;
+    font-weight: 800;
+    margin-bottom: 12px;
+    color: #ffffff;
+}
+
+.hero-section p {
+    color: #cbd5e1;
+    font-size: 15px;
+    max-width: 500px;
+}
+
+/* Tombol Filter Genre */
+.genre-filters {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+    overflow-x: auto;
+    padding-bottom: 5px;
+}
+
+.filter-btn {
+    padding: 8px 18px;
+    border-radius: 12px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    white-space: nowrap;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #cbd5e1;
+    transition: all 0.2s;
+}
+
+.filter-btn:hover {
+    border-color: #c084fc;
+}
+
+.filter-btn.active {
+    background-color: #a855f7;
+    color: #ffffff;
+    border-color: #a855f7;
+    font-weight: 600;
+}
+
+/* Grid Kartu Musik */
+.music-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 20px;
+}
+
+.song-card {
+    background-color: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 16px;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.song-card:hover {
+    transform: translateY(-4px);
+    border-color: #c084fc;
+}
+
+.image-box {
+    width: 100%;
+    aspect-ratio: 1;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 14px;
+}
+
+.image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.song-info h3 {
+    font-size: 15px;
+    font-weight: 600;
+    color: #f1f5f9;
+    margin-bottom: 4px;
+}
+
+.artist-name {
+    font-size: 12px;
+    color: #94a3b8;
+    margin-bottom: 12px;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 11px;
+}
+
+.genre-tag {
+    padding: 3px 8px;
+    border-radius: 6px;
+    font-weight: 500;
+}
+
+.genre-tag.rock { background-color: rgba(244, 63, 94, 0.15); color: #fb7185; }
+.genre-tag.jazz { background-color: rgba(234, 179, 8, 0.15); color: #facc15; }
+.genre-tag.pop { background-color: rgba(192, 132, 252, 0.15); color: #c084fc; }
+.genre-tag.dangdut { background-color: rgba(236, 72, 153, 0.15); color: #f472b6; }
+
+.duration {
+    color: #64748b;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    color: #64748b;
+    font-size: 12px;
+    margin-top: 40px;
+}
