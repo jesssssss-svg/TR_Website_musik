@@ -1,4 +1,3 @@
-
 /* GENERAL */
 * {
     margin: 0;
@@ -189,6 +188,130 @@ footer span {
 
 @media (max-width: 480px) {
     .music-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* PLAYLIST HERO */
+.playlist-hero {
+    text-align: center;
+    padding: 85px 20px;
+    background: linear-gradient(
+        120deg,
+        #100d19,
+        #49275f,
+        #181225
+    );
+}
+
+.playlist-subtitle {
+    color: #c084fc;
+    letter-spacing: 3px;
+    font-size: 13px;
+    margin-bottom: 18px;
+}
+
+.playlist-hero h1 {
+    font-size: 45px;
+    margin-bottom: 18px;
+}
+
+.playlist-hero h1 span {
+    color: #c084fc;
+}
+
+.playlist-hero p:not(.playlist-subtitle) {
+    color: #c9c2d4;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+/* PLAYLIST SECTION */
+.playlist-section {
+    padding: 60px 8%;
+}
+
+.playlist-heading h2 {
+    font-size: 30px;
+}
+
+.playlist-heading h2 span {
+    color: #c084fc;
+}
+
+.playlist-heading p {
+    color: #aaa;
+    margin-top: 10px;
+}
+
+/* PLAYLIST CONTAINER */
+.playlist-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    margin-top: 35px;
+}
+
+/* PLAYLIST CARD */
+.playlist-card {
+    background-color: #20192d;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.playlist-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px #00000050;
+}
+
+.playlist-card img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+}
+
+.playlist-info {
+    padding: 18px;
+}
+
+.playlist-info h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.playlist-info p {
+    color: #aaa;
+    font-size: 13px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.playlist-info ul {
+    list-style: none;
+    border-top: 1px solid #40334f;
+    padding-top: 12px;
+}
+
+.playlist-info li {
+    color: #d5c9e2;
+    font-size: 12px;
+    padding: 5px 0;
+}
+
+/* RESPONSIVE PLAYLIST */
+@media (max-width: 768px) {
+    .playlist-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .playlist-hero h1 {
+        font-size: 35px;
+    }
+}
+
+@media (max-width: 480px) {
+    .playlist-container {
         grid-template-columns: 1fr;
     }
 }
