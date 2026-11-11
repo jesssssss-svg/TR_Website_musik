@@ -9,10 +9,16 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
     let password = document.getElementById("password").value;
 
     if (username == usernameBenar && password == passwordBenar) {
-       window.location.href="index.html"
-
-    } else {
-        document.getElementById("pesan").innerHTML = "Username atau Password Salah!";
+        window.location.href = "index.html";
+    }
+    else if (username != usernameBenar && password != passwordBenar) {
+        document.getElementById("pesan").innerHTML = "Username dan Password Salah!";
+    }
+    else if (username != usernameBenar) {
+        document.getElementById("pesan").innerHTML = "Username Salah!";
+    }
+    else if (password != passwordBenar) {
+        document.getElementById("pesan").innerHTML = "Password Salah!";
     }
 
 });
