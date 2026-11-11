@@ -1,0 +1,97 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h2 {
+    font-size: 30px;
+    color: white;
+    margin-bottom: 30px;
+}
+
+h2 span {
+    font-size: 30px;
+    color: #c084fc;
+    margin-bottom: 30px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+     background: linear-gradient(
+        90deg,
+        #100d19,
+        #2a2496,
+        #100d19
+    );
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.register-container {
+    background-color: #1c1828;
+    padding: 35px;
+    width: 350px;
+    border-radius: 15px;
+}
+
+.register-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.register-container label {
+    display: block;
+    margin-bottom: 7px;
+    margin-top: 15px;
+}
+
+.register-container input {
+    width: 100%;
+    padding: 11px;
+    border: none;
+    border-radius: 6px;
+    background-color: #302a40;
+    color: white;
+    outline: none;
+}
+
+.register-container button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 22px;
+    background-color: #a66cff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.register-container button:hover {
+    background-color: #8950d8;
+}
+
+.register-container p {
+    text-align: center;
+    margin-top: 18px;
+    font-size: 13px;
+}
+
+.register-container a {
+    color: #b98aff;
+    text-decoration: none;
+}
+
+#pesan {
+    color: #ff6b6b;
+    text-align: center;
+    font-weight: bold;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+#pesan.berhasil {
+    color: #65d69a;
+}
