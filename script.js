@@ -11,14 +11,7 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
     if (username == usernameBenar && password == passwordBenar) {
         window.location.href = "index.html";
     }
-    else if (username != usernameBenar && password != passwordBenar) {
-        document.getElementById("pesan").innerHTML = "Username dan Password Salah!";
+    else {
+        document.getElementById("pesan").innerHTML = "LOGIN GAGAL <br>Username atau Password Salah!";
     }
-    else if (username != usernameBenar) {
-        document.getElementById("pesan").innerHTML = "Username Salah!";
-    }
-    else if (password != passwordBenar) {
-        document.getElementById("pesan").innerHTML = "Password Salah!";
-    }
-
 });
