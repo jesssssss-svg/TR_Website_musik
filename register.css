@@ -31,7 +31,8 @@ body {
 }
 
 .register-container {
-    background-color: #1c1828;
+    background-color: #1a1528;
+    border: 2px solid #c084fc;
     padding: 35px;
     width: 350px;
     border-radius: 15px;
@@ -46,6 +47,7 @@ body {
     display: block;
     margin-bottom: 7px;
     margin-top: 15px;
+    color: white;
 }
 
 .register-container input {
@@ -77,6 +79,7 @@ body {
     text-align: center;
     margin-top: 18px;
     font-size: 13px;
+    color: white;
 }
 
 .register-container a {
