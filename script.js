@@ -7,12 +7,26 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
 
     let username = document.getElementById("username").value;
     let password = document.getElementById("password").value;
+    let pesan = document.getElementById("pesan");
 
-    if (username == usernameBenar && password == passwordBenar) {
-       window.location.href="index.html"
+    let akun = JSON.parse(localStorage.getItem("akun")) || [];
 
-    } else {
-        document.getElementById("pesan").innerHTML = "Username atau Password Salah!";
+    let akunDitemukan = akun.find(function(data) {
+        return data.username == username && data.password == password;
+    });
+
+    let usernameAda = akun.some(function(data) {
+        return data.username == username;
+    });
+
+    if (akunDitemukan) {
+        window.location.href = "index.html";
+    }
+    else if (!usernameAda) {
+        pesan.innerHTML = "LOGIN GAGAL!<br>Username Salah!";
+    }
+    else {
+        pesan.innerHTML = "LOGIN GAGAL!<br>Password Salah!";
     }
 
 });
