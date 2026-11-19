@@ -1,41 +1,77 @@
-/* ARTIST SECTION */
+/* =====================================================
+   artist.css  -  Halaman Artist LOOPIFY
+   Dipakai oleh artist.html (urutan kode mengikuti HTML:
+   header -> daftar artis -> popup -> footer)
+   ===================================================== */
+
+
+/* =====================================================
+   1. PENGATURAN DASAR (berlaku untuk semua elemen)
+   ===================================================== */
+
+/* Reset: hilangkan jarak bawaan browser dan samakan jenis huruf */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
+/* Latar belakang dan warna tulisan seluruh halaman <body> */
 body {
     font-family: Arial, sans-serif;
     background-color: #1a1528;
     color: white;
 }
 
+
+/* =====================================================
+   2. HEADER & NAVBAR  (<header> dan <nav class="navbar">)
+   ===================================================== */
+
+/* Bar atas berwarna biru tua.
+   sticky + top: 0 = navbar tetap menempel di atas saat halaman di-scroll */
 header {
     background-color: rgb(28, 28, 75);
     padding: 20px 8%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
+
+/* Logo di kiri, menu di kanan */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
+/* Tulisan LOOPIFY (<h2 class="logo">) */
 .logo {
     font-size: 27px;
     color: white;
 }
 
+/* Tulisan "IFY" berwarna ungu */
 .logo span {
     color: #c084fc;
 }
 
+/* Logo berupa link ke Home: tampilan tetap seperti tulisan biasa
+   (tanpa garis bawah dan tanpa warna biru link) */
+.logo a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Daftar menu (Home, Genre, Artist, Playlist, Profile) berjajar ke samping */
 .navbar ul {
     display: flex;
     list-style: none;
     gap: 30px;
 }
 
+/* Tampilan link menu */
 .navbar a {
     text-decoration: none;
     color: white;
@@ -43,21 +79,32 @@ header {
     transition: 0.3s;
 }
 
+/* Link menu berubah ungu saat kursor diarahkan */
 .navbar a:hover {
     color: #c084fc;
 }
+
+
+/* =====================================================
+   3. BAGIAN DAFTAR ARTIS  (<section class="artist-section">)
+   ===================================================== */
+
+/* Jarak di sekeliling seluruh bagian artis */
 .artist-section {
     padding: 60px 8%;
 }
 
+/* Judul "Popular Artists" */
 .artist-section h2 {
     font-size: 30px;
 }
 
+/* Kata "Artists" berwarna ungu */
 .artist-section h2 span {
     color: #c084fc;
 }
 
+/* Kotak pembungkus semua kartu: tersusun 4 kolom (grid) */
 .artist-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -65,6 +112,12 @@ header {
     margin-top: 35px;
 }
 
+
+/* =====================================================
+   4. KARTU ARTIS  (<a class="artist-card">)
+   ===================================================== */
+
+/* Kotak kartu tiap artis */
 .artist-card {
     background-color: #20192d;
     padding: 20px 15px;
@@ -73,11 +126,13 @@ header {
     transition: 0.3s;
 }
 
+/* Efek kartu naik sedikit dan bercahaya ungu saat kursor di atasnya */
 .artist-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 8px 20px rgba(168, 85, 247, 0.25);
 }
 
+/* Foto artis: bulat, 150px, dengan garis ungu */
 .artist-card img {
     width: 150px;
     height: 150px;
@@ -86,16 +141,19 @@ header {
     border: 3px solid #a855f7;
 }
 
+/* Nama artis (<h3>) */
 .artist-card h3 {
     margin-top: 15px;
 }
 
+/* Genre artis (<p>) berwarna abu-abu */
 .artist-card p {
     color: #aaa;
     margin-top: 8px;
 }
 
-/* KARTU JADI BISA DIKLIK */
+/* Kartu berupa link: hilangkan garis bawah dan warna biru bawaan link,
+   kursor berubah jadi tangan supaya terlihat bisa diklik */
 a.artist-card {
     display: block;
     color: inherit;
@@ -103,7 +161,15 @@ a.artist-card {
     cursor: pointer;
 }
 
-/* POPUP MUSIK (DISESUAIKAN DENGAN TEMA UNGU LOOPIFY) */
+
+/* =====================================================
+   5. POPUP LAGU  (<div class="modal-overlay"> dari HTML)
+   Cara kerja: kartu menuju #modal-nama-artis, dan popup
+   yang id-nya cocok akan tampil lewat :target (tanpa JavaScript)
+   ===================================================== */
+
+/* Lapisan gelap menutupi seluruh layar. Awalnya disembunyikan (display: none).
+   z-index 2000 supaya popup berada di atas navbar (navbar = 1000) */
 .modal-overlay {
     display: none;
     position: fixed;
@@ -112,13 +178,16 @@ a.artist-card {
     justify-content: center;
     align-items: center;
     padding: 20px;
-    z-index: 1000;
+    z-index: 2000;
 }
 
+/* Popup tampil saat id-nya sedang dituju oleh link (:target) */
 .modal-overlay:target {
     display: flex;
 }
 
+/* Kotak popup berwarna ungu gelap dengan garis ungu.
+   Jika isinya panjang, kotak bisa di-scroll (overflow-y: auto) */
 .modal-box {
     position: relative;
     width: 100%;
@@ -133,6 +202,7 @@ a.artist-card {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
 }
 
+/* Nama artis di dalam popup (<h2>) */
 .modal-box h2 {
     color: #c084fc;
     font-size: 24px;
@@ -140,6 +210,7 @@ a.artist-card {
     padding-right: 35px;
 }
 
+/* Tombol silang (×) di pojok kanan atas popup untuk menutup */
 .tombol-tutup {
     position: absolute;
     top: 12px;
@@ -151,17 +222,24 @@ a.artist-card {
     transition: 0.2s;
 }
 
+/* Tombol silang berubah ungu saat kursor diarahkan */
 .tombol-tutup:hover {
     color: #c084fc;
 }
 
-/* DAFTAR LAGU & PEMUTAR AUDIO DI DALAM POPUP */
+
+/* =====================================================
+   6. DAFTAR LAGU & PEMUTAR AUDIO DI DALAM POPUP
+   ===================================================== */
+
+/* Pembungkus semua lagu: tersusun ke bawah dengan jarak antar lagu */
 .list-lagu {
     display: flex;
     flex-direction: column;
     gap: 12px;
 }
 
+/* Satu baris lagu (<div class="item-lagu">): judul di kiri, pemutar di kanan */
 .item-lagu {
     display: flex;
     justify-content: space-between;
@@ -174,25 +252,40 @@ a.artist-card {
     flex-wrap: wrap;
 }
 
+/* Judul lagu */
 .item-lagu span {
     font-size: 14px;
     font-weight: 500;
     color: #f3e8ff;
 }
 
+/* Pemutar audio (<audio controls>) */
 .item-lagu audio {
     height: 34px;
     max-width: 240px;
     border-radius: 20px;
 }
 
-/* RESPONSIVE */
+/* Tulisan "Lagu belum tersedia." untuk artis yang belum punya lagu */
+.info-lagu {
+    color: #aaa;
+    text-align: center;
+    padding: 10px 0;
+}
+
+
+/* =====================================================
+   7. TAMPILAN HP / LAYAR KECIL (kartu & popup)
+   ===================================================== */
+
+/* Layar sedang (tablet): kartu artis jadi 2 kolom */
 @media (max-width: 768px) {
     .artist-container {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
+/* Layar kecil (HP): kartu jadi 1 kolom, judul lagu dan pemutar tersusun ke bawah */
 @media (max-width: 480px) {
     .artist-container {
         grid-template-columns: 1fr;
@@ -208,6 +301,13 @@ a.artist-card {
         max-width: 100%;
     }
 }
+
+
+/* =====================================================
+   8. FOOTER  (<footer>)
+   ===================================================== */
+
+/* Bagian bawah halaman */
 footer {
     background-color: #181225;
     text-align: center;
@@ -215,11 +315,19 @@ footer {
     line-height: 2;
 }
 
+/* Tulisan "IFY" di footer berwarna ungu */
 footer span {
     color: #c084fc;
 }
 
-/* RESPONSIVE */
+
+/* =====================================================
+   9. TAMPILAN HP UNTUK NAVBAR
+   (.hero dan .music-container tidak dipakai di artist.html,
+    kemungkinan sisa dari halaman lain; boleh dihapus nanti)
+   ===================================================== */
+
+/* Layar sedang: logo di atas, menu di bawahnya dan boleh turun baris */
 @media (max-width: 768px) {
     .navbar {
         flex-direction: column;
@@ -241,6 +349,7 @@ footer span {
     }
 }
 
+/* Layar kecil */
 @media (max-width: 480px) {
     .music-container {
         grid-template-columns: 1fr;
