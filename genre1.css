@@ -33,13 +33,44 @@ body {
     gap: 12px;
 }
 
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 27px;
+    color: white;
+}
+
+.logo span {
+    color: #c084fc;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.navbar a:hover {
+    color: #c084fc;
+}
+
 /* Font & Warna LOOPIFY persis seperti SS (Gradasi Pink/Ungu Muda ke Putih) */
 .logo-text {
     font-size: 26px;
     font-weight: 800;
     letter-spacing: 2px;
     background: linear-gradient(90deg, #edeaf0 0%);
-    -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 
 }
@@ -49,7 +80,6 @@ body {
     font-weight: 800;
     letter-spacing: 2px;
     background: linear-gradient(90deg, #c084fc);
-    -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     
 }

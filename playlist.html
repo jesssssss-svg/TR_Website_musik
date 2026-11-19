@@ -1,155 +1,146 @@
-    <!-- PLAYLIST HERO -->
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Playlist | </title>
-        <link rel="stylesheet" href="stlye.css">
-    </head>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOOPIFY | Katalog playlist Musik</title>
+    <link rel="stylesheet" href="playlist.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
 
-    <section class="playlist-hero">
-        <p class="playlist-subtitle">MUSIC FOR EVERY MOMENT</p>
+     <header>
+        <nav class="navbar">
+            <h2 class="logo">LOOP<span>IFY</span></h2>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="genre.html">Genre</a></li>
+                <li><a href="artist.html">Artist</a></li>
+                <li><a href="playlist.html">Playlist</a></li>
+                <li><a href="profile.html">Profile</a></li>
+            </ul>
+        </nav>
+    </header>
 
-        <h1>Discover Your <span>Playlist</span></h1>
+    <!-- Header / Navbar dengan Search Bar di Kanan Atas -->
+    <header class="navbar">
+    <div class="logo-container">
+        <!-- Logo LOOPIFY dengan warna gradasi persis SS -->
+    </div>
 
-        <p>
-            Find the perfect soundtrack for every mood,
-            moment, and memory.
-        </p>
+    <div class="search-container">
+        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+        <input type="text" id="searchInput" placeholder="Search music..." class="search-input">
+    </div>
+</header>
 
-        <a href="#playlist-list" class="btn">Explore Playlist</a>
-    </section>
+    <!-- Konten Utama -->
+    <main class="main-container">
+        <section class="hero-section">
+    <p class="hero-subtitle">WELCOME TO LOOPIFY</p>
+    <h1>Discover Your <span class="loopify-title">Music</span></h1>
+    <p>Explore your favorite music, discover new artists, and find the perfect playlist for every mood.</p>
+</section>
 
-    <!-- FEATURED PLAYLIST -->
-    <section class="playlist-section" id="playlist-list">
-
-        <div class="playlist-heading">
-            <h2>Featured <span>Playlists</span></h2>
-            <p>Choose your mood and enjoy your favorite music.</p>
+        <!-- Tombol Filter Genre (Interaktif) -->
+        <div class="genre-filters">
+            <button onclick="filterGenre('all')" class="filter-btn active">All Playlist</button>
+            <button onclick="filterGenre('Study time')" class="filter-btn">Study time</button>
+            <button onclick="filterGenre('Love song')" class="filter-btn">Love song</button>
+            <button onclick="filterGenre('Sad song')" class="filter-btn">Sad song</button>
+            <button onclick="filterGenre('night drive')" class="filter-btn">night drive</button>
         </div>
 
-        <div class="playlist-container">
-
-            <!-- STUDY TIME -->
-            <div class="playlist-card">
-                <img src="images/study.jpg" alt="Study Time">
-                <div class="playlist-info">
+        <!-- Grid Kartu Musik (Setiap card diberi attribute data-genre) -->
+        <section class="music-grid" id="songGrid">
+            
+            <!-- Kartu 1: -->
+            <div class="song-card" data-genre="Study time">
+                <div class="image-box">
+                    <img src="https://i.pinimg.com/1200x/1b/80/78/1b80783c9abcc0edb7718da0a3080986.jpg" alt="study time">
+                </div>
+                <div class="song-info">
                     <h3>Study Time</h3>
-                    <p>Focus on your study with relaxing music.</p>
-                    <ul>
-                        <li>Snowman - Sia</li>
-                        <li>Until I Found You - Stephen Sanchez</li>
-                        <li>Those Eyes - New West</li>
-                    </ul>
+                    <div class="card-footer">
+                    </div>
                 </div>
             </div>
 
-            <!-- LOVE SONGS -->
-            <div class="playlist-card">
-                <img src="images/love.jpg" alt="Love Songs">
-                <div class="playlist-info">
-                    <h3>Love Songs</h3>
-                    <p>Beautiful songs about love and feelings.</p>
-                    <ul>
-                        <li>Perfect - Ed Sheeran</li>
-                        <li>All of Me - John Legend</li>
-                        <li>Daylight - Taylor Swift</li>
-                    </ul>
+            <!-- Kartu 2: -->
+            <div class="song-card" data-genre="jazz">
+                <div class="image-box">
+                    <img src="TR_Website_musik/foto/love song.jpg" alt="love song">
+                </div>
+                <div class="song-info">
+                    <h3>Love song</h3>
+                    <div class="card-footer">
+                    </div>
                 </div>
             </div>
 
-            <!-- NIGHT DRIVE -->
-            <div class="playlist-card">
-                <img src="images/night.jpg" alt="Night Drive">
-                <div class="playlist-info">
-                    <h3>Night Drive</h3>
-                    <p>Enjoy the night with your favorite songs.</p>
-                    <ul>
-                        <li>Blinding Lights - The Weeknd</li>
-                        <li>Night Changes - One Direction</li>
-                        <li>Starboy - The Weeknd</li>
-                    </ul>
+            <!-- Kartu 3: -->
+            <div class="song-card" data-genre="pop">
+                <div class="image-box">
+                    <img src="TR_Website_musik/foto/sad song.jpeg" alt="sad song">
+                </div>
+                <div class="song-info">
+                    <h3>Sad song</h3>
+                    <div class="card-footer">
+                    </div>
                 </div>
             </div>
 
-            <!-- GOOD MOOD -->
-            <div class="playlist-card">
-                <img src="images/happy.jpg" alt="Good Mood">
-                <div class="playlist-info">
-                    <h3>Good Mood</h3>
-                    <p>Feel happy and enjoy every moment.</p>
-                    <ul>
-                        <li>Espresso - Sabrina Carpenter</li>
-                        <li>APT. - ROSÉ & Bruno Mars</li>
-                        <li>Levitating - Dua Lipa</li>
-                    </ul>
+            <!-- Kartu 4: -->
+            <div class="song-card" data-genre="dangdut">
+                <div class="image-box">
+                    <img src="TR_Website_musik/foto/foto night song.jpg" alt="night">
+                </div>
+                <div class="song-info">
+                    <h3>night drive</h3>
+                    <div class="card-footer">
+                    </div>
                 </div>
             </div>
 
-            <!-- CHILL VIBES -->
-            <div class="playlist-card">
-                <img src="images/chill.jpg" alt="Chill Vibes">
-                <div class="playlist-info">
-                    <h3>Chill Vibes</h3>
-                    <p>Relax your mind with calming music.</p>
-                    <ul>
-                        <li>Every Summertime - NIKI</li>
-                        <li>Best Part - Daniel Caesar</li>
-                        <li>Blue - Yung Kai</li>
-                    </ul>
-                </div>
-            </div>
+        </section>
+    </main>
 
-            <!-- WORKOUT -->
-            <div class="playlist-card">
-                <img src="images/workout.jpg" alt="Workout Beats">
-                <div class="playlist-info">
-                    <h3>Workout Beats</h3>
-                    <p>Stay motivated with energetic songs.</p>
-                    <ul>
-                        <li>Believer - Imagine Dragons</li>
-                        <li>Unstoppable - Sia</li>
-                        <li>Stronger - Kanye West</li>
-                    </ul>
-                </div>
-            </div>
+    
 
-            <!-- SAD HOURS -->
-            <div class="playlist-card">
-                <img src="images/sad.jpg" alt="Sad Hours">
-                <div class="playlist-info">
-                    <h3>Sad Hours</h3>
-                    <p>Music for quiet and emotional moments.</p>
-                    <ul>
-                        <li>Another Love - Tom Odell</li>
-                        <li>Happier - Olivia Rodrigo</li>
-                        <li>Let Her Go - Passenger</li>
-                    </ul>
-                </div>
-            </div>
+    <!-- JavaScript untuk Menjalankan Filter & Search Bar -->
+    <script>
+        // 1. Fungsi Filter Genre saat tombol genre diklik
+        function filterGenre(genre) {
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
 
-            <!-- PARTY TIME -->
-            <div class="playlist-card">
-                <img src="images/party.jpg" alt="Party Time">
-                <div class="playlist-info">
-                    <h3>Party Time</h3>
-                    <p>Make every moment more exciting.</p>
-                    <ul>
-                        <li>Dance The Night - Dua Lipa</li>
-                        <li>Uptown Funk - Bruno Mars</li>
-                        <li>Can't Stop the Feeling! - Justin Timberlake</li>
-                    </ul>
-                </div>
-            </div>
+            const cards = document.querySelectorAll('.song-card');
+            cards.forEach(card => {
+                if (genre === 'all' || card.dataset.genre === genre) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
 
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer>
-        <h2>LOOP<span>IFY</span></h2>
-        <p>Where Technology Meets Music.</p>
-        <p>© 2026 BITBEATS. All Rights Reserved.</p>
-    </footer>
-
+        // 2. Fungsi Live Search (Mencari lagu atau artis saat diketik)
+        document.getElementById('searchInput').addEventListener('input', function(e) {
+            const term = e.target.value.toLowerCase();
+            const cards = document.querySelectorAll('.song-card');
+            
+            cards.forEach(card => {
+                const title = card.querySelector('h3').innerText.toLowerCase();
+                const artist = card.querySelector('.artist-name').innerText.toLowerCase();
+                
+                if (title.includes(term) || artist.includes(term)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    </script>
 </body>
 </html>
