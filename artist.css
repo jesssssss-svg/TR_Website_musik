@@ -19,9 +19,12 @@
 
 /* Latar belakang dan warna tulisan seluruh halaman <body> */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #1a1528;
-    color: white;
+    background: linear-gradient(135deg, #0f0c29, #120e38, #0a081d);
+    background-attachment: fixed;
+    color: #f8fafc;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 
@@ -32,8 +35,9 @@ body {
 /* Bar atas berwarna biru tua.
    sticky + top: 0 = navbar tetap menempel di atas saat halaman di-scroll */
 header {
-    background-color: rgb(28, 28, 75);
-    padding: 20px 8%;
+    background-color: rgba(10, 8, 29, 0.7);  
+    backdrop-filter: blur(10px); 
+    padding: 20px 40px;
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -48,20 +52,25 @@ header {
 
 /* Tulisan LOOPIFY (<h2 class="logo">) */
 .logo {
-    font-size: 27px;
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: 2px;
     color: white;
 }
 
-/* Tulisan "IFY" berwarna ungu */
-.logo span {
-    color: #c084fc;
+.navbar .logo a {
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: white;
+    text-decoration: none;
 }
 
-/* Logo berupa link ke Home: tampilan tetap seperti tulisan biasa
-   (tanpa garis bawah dan tanpa warna biru link) */
-.logo a {
-    color: inherit;
-    text-decoration: none;
+.navbar .logo a span {
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: #c084fc;
 }
 
 /* Daftar menu (Home, Genre, Artist, Playlist, Profile) berjajar ke samping */

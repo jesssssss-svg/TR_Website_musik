@@ -11,7 +11,9 @@
 
      <header>
         <nav class="navbar">
-            <h2 class="logo">LOOP<span>IFY</span></h2>
+    <a href="beranda.html" class="logo-link">
+    <h2 class="logo">LOOP<span>IFY</span></h2>
+</a>
             <ul>
                 <li><a href="genre.html">Genre</a></li>
                 <li><a href="artist.html">Artist</a></li>
@@ -21,15 +23,15 @@
         </nav>
     </header>
 
-    <!-- Header / Navbar dengan Search Bar di Kanan Atas -->
-    <header class="navbar">
+   <!-- Header / Navbar dengan Search Bar hanya pajangan -->
+<header class="navbar">
     <div class="logo-container">
-        <!-- Logo LOOPIFY dengan warna gradasi persis SS -->
+        <!-- Logo LOOPIFY -->
     </div>
 
-    <div class="search-container">
+    <div class="search-container" style="pointer-events: none; user-select: none;">
         <i class="fa-solid fa-magnifying-glass search-icon"></i>
-        <input type="text" id="searchInput" placeholder="Search music..." class="search-input">
+        <input type="text" placeholder="Search music..." class="search-input" readonly tabindex="-1">
     </div>
 </header>
 
@@ -105,10 +107,8 @@
     </main>
 
     
-
-    <!-- JavaScript untuk Menjalankan Filter & Search Bar -->
+    <!-- JavaScript hanya untuk Menjalankan Filter Genre -->
     <script>
-        // 1. Fungsi Filter Genre saat tombol genre diklik
         function filterGenre(genre) {
             const buttons = document.querySelectorAll('.filter-btn');
             buttons.forEach(btn => btn.classList.remove('active'));
@@ -123,23 +123,6 @@
                 }
             });
         }
-
-        // 2. Fungsi Live Search (Mencari lagu atau artis saat diketik)
-        document.getElementById('searchInput').addEventListener('input', function(e) {
-            const term = e.target.value.toLowerCase();
-            const cards = document.querySelectorAll('.song-card');
-            
-            cards.forEach(card => {
-                const title = card.querySelector('h3').innerText.toLowerCase();
-                const artist = card.querySelector('.artist-name').innerText.toLowerCase();
-                
-                if (title.includes(term) || artist.includes(term)) {
-                    card.style.display = 'block';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        });
     </script>
 </body>
 </html>

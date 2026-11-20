@@ -266,3 +266,119 @@ footer {
     font-size: 12px;
     margin-top: 40px;
 }
+
+
+/* =====================================================
+   TAMBAHAN: POPUP LAGU (untuk kartu di genre.html)
+   Cara kerja: kartu menuju #modal-lagu-N, dan popup yang
+   id-nya cocok tampil lewat :target (tanpa JavaScript)
+   ===================================================== */
+
+/* Kartu lagu berupa link: hilangkan warna biru dan garis bawah bawaan link,
+   kursor jadi tangan supaya terlihat bisa diklik */
+a.song-card {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Lapisan gelap menutupi layar, awalnya disembunyikan */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    z-index: 2000;
+}
+
+/* Popup tampil saat id-nya sedang dituju oleh link (:target) */
+.modal-overlay:target {
+    display: flex;
+}
+
+/* Kotak popup ungu gelap dengan garis ungu */
+.modal-box {
+    position: relative;
+    width: 100%;
+    max-width: 540px;
+    max-height: 82vh;
+    overflow-y: auto;
+    background-color: #20192d;
+    border: 2px solid #a855f7;
+    color: #ffffff;
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+/* Judul lagu di popup */
+.modal-box h2 {
+    color: #c084fc;
+    font-size: 24px;
+    margin-bottom: 6px;
+    padding-right: 35px;
+}
+
+/* Nama artis di popup */
+.modal-artist {
+    color: #94a3b8;
+    font-size: 13px;
+    margin-bottom: 18px;
+}
+
+/* Tombol silang (x) untuk menutup popup */
+.tombol-tutup {
+    position: absolute;
+    top: 12px;
+    right: 18px;
+    color: #ffffff;
+    font-size: 30px;
+    text-decoration: none;
+    line-height: 1;
+    transition: 0.2s;
+}
+
+.tombol-tutup:hover {
+    color: #c084fc;
+}
+
+/* Daftar lagu dan pemutar audio di dalam popup */
+.list-lagu {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.item-lagu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2d233f;
+    border: 1px solid rgba(192, 132, 252, 0.25);
+    padding: 10px 15px;
+    border-radius: 10px;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.item-lagu span {
+    font-size: 14px;
+    color: #f3e8ff;
+}
+
+.item-lagu audio {
+    height: 34px;
+    max-width: 240px;
+    border-radius: 20px;
+}
+
+/* Tulisan "Lagu belum tersedia." */
+.info-lagu {
+    color: #aaa;
+    text-align: center;
+    padding: 12px 0 0;
+}
