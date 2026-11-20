@@ -52,20 +52,25 @@ header {
 
 /* Tulisan LOOPIFY (<h2 class="logo">) */
 .logo {
-    font-size: 27px;
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: 2px;
     color: white;
 }
 
-/* Tulisan "IFY" berwarna ungu */
-.logo span {
-    color: #c084fc;
+.navbar .logo a {
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: white;
+    text-decoration: none;
 }
 
-/* Logo berupa link ke Home: tampilan tetap seperti tulisan biasa
-   (tanpa garis bawah dan tanpa warna biru link) */
-.logo a {
-    color: inherit;
-    text-decoration: none;
+.navbar .logo a span {
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: #c084fc;
 }
 
 /* Daftar menu (Home, Genre, Artist, Playlist, Profile) berjajar ke samping */
