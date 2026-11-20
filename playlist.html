@@ -55,17 +55,68 @@
         <!-- Grid Kartu Musik (Setiap card diberi attribute data-genre) -->
         <section class="music-grid" id="songGrid">
             
-            <!-- Kartu 1: -->
-            <div class="song-card" data-genre="Study time">
-                <div class="image-box">
-                    <img src="https://i.pinimg.com/1200x/1b/80/78/1b80783c9abcc0edb7718da0a3080986.jpg" alt="study time">
-                </div>
-                <div class="song-info">
-                    <h3>Study Time</h3>
-                    <div class="card-footer">
-                    </div>
-                </div>
+            
+
+<!-- PLAYLIST STUDY TIME -->
+<details class="playlist-expand" data-genre="Study time">
+
+    <!-- Card yang diklik -->
+    <summary class="song-card">
+        <div class="image-box">
+            <img src="https://i.pinimg.com/1200x/1b/80/78/1b80783c9abcc0edb7718da0a3080986.jpg" alt="Study Time">
+        </div>
+
+        <div class="song-info">
+            <h3>Study Time</h3>
+            <div class="card-footer"></div>
+        </div>
+    </summary>
+
+    <!-- Isi playlist yang muncul saat diklik -->
+    <div class="playlist-content">
+
+        <h2>Study Time Playlist</h2>
+        <p>Music to accompany your study time.</p>
+
+        <!-- Lagu 1 -->
+        <div class="playlist-track">
+            <span>01</span>
+            <div class="track-info">
+                <h3>DAN</h3>
+                <p>Sheila on 7</p>
+                <audio controls>
+                    <source src="musik/dan.mp3" type="audio/mpeg">
+                </audio>
             </div>
+        </div>
+
+        <!-- Lagu 2 -->
+        <div class="playlist-track">
+            <span>02</span>
+            <div class="track-info">
+                <h3>Judul Lagu 2</h3>
+                <p>Nama Artis 2</p>
+                <audio controls>
+                    <source src="musik/lagu2.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+        </div>
+
+        <!-- Lagu 3 -->
+        <div class="playlist-track">
+            <span>03</span>
+            <div class="track-info">
+                <h3>Judul Lagu 3</h3>
+                <p>Nama Artis 3</p>
+                <audio controls>
+                    <source src="musik/lagu3.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+        </div>
+
+
+</div>
+</details>
 
             <!-- Kartu 2: -->
             <div class="song-card" data-genre="jazz">
@@ -79,34 +130,12 @@
                 </div>
             </div>
 
-            <!-- Kartu 3: -->
-            <div class="song-card" data-genre="pop">
-                <div class="image-box">
-                    <img src="TR_Website_musik/foto/sad song.jpeg" alt="sad song">
-                </div>
-                <div class="song-info">
-                    <h3>Sad song</h3>
-                    <div class="card-footer">
-                    </div>
-                </div>
-            </div>
-
-            <!-- Kartu 4: -->
-            <div class="song-card" data-genre="dangdut">
-                <div class="image-box">
-                    <img src="TR_Website_musik/foto/foto night song.jpg" alt="night">
-                </div>
-                <div class="song-info">
-                    <h3>night drive</h3>
-                    <div class="card-footer">
-                    </div>
-                </div>
+    
             </div>
 
         </section>
     </main>
 
-    
     <!-- JavaScript hanya untuk Menjalankan Filter Genre -->
     <script>
         function filterGenre(genre) {
