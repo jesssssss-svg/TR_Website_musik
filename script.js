@@ -9,24 +9,11 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
     let password = document.getElementById("password").value;
     let pesan = document.getElementById("pesan");
 
-    let akun = JSON.parse(localStorage.getItem("akun")) || [];
-
-    let akunDitemukan = akun.find(function(data) {
-        return data.username == username && data.password == password;
-    });
-
-    let usernameAda = akun.some(function(data) {
-        return data.username == username;
-    });
-
-    if (akunDitemukan) {
-        window.location.href ="beranda.html";
-    }
-    else if (!usernameAda) {
-        pesan.innerHTML = "LOGIN GAGAL!<br>Username Salah!";
+    if (username == usernameBenar && password == passwordBenar) {
+        window.location.href = "beranda.html";
     }
     else {
-        pesan.innerHTML = "LOGIN GAGAL!<br>Password Salah!";
+        pesan.innerHTML = "LOGIN GAGAL!<br>Username atau Password Salah!";
     }
 
 });
