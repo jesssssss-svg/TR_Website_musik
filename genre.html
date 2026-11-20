@@ -58,7 +58,7 @@
         <section class="music-grid" id="songGrid">
             
             <!-- Kartu 1: Rock -->
-            <div class="song-card" data-genre="rock">
+            <a class="song-card" href="#modal-lagu-1" data-genre="rock">
                 <div class="image-box">
                     <img src="https://images.unsplash.com/photo-1498038432885-c6f3f1b912ee?auto=format&fit=crop&q=80&w=500" alt="Rock">
                 </div>
@@ -70,10 +70,10 @@
                         <span class="duration">3:45</span>
                     </div>
                 </div>
-            </div>
+            </a>
 
             <!-- Kartu 2: Jazz -->
-            <div class="song-card" data-genre="jazz">
+            <a class="song-card" href="#modal-lagu-2" data-genre="jazz">
                 <div class="image-box">
                     <img src="https://images.unsplash.com/photo-1511192336575-5a79af67a629?auto=format&fit=crop&q=80&w=500" alt="Jazz">
                 </div>
@@ -85,10 +85,10 @@
                         <span class="duration">4:12</span>
                     </div>
                 </div>
-            </div>
+            </a>
 
             <!-- Kartu 3: Pop -->
-            <div class="song-card" data-genre="pop">
+            <a class="song-card" href="#modal-lagu-3" data-genre="pop">
                 <div class="image-box">
                     <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&q=80&w=500" alt="Pop">
                 </div>
@@ -100,10 +100,10 @@
                         <span class="duration">3:05</span>
                     </div>
                 </div>
-            </div>
+            </a>
 
             <!-- Kartu 4: Dangdut / Hipdut -->
-            <div class="song-card" data-genre="dangdut">
+            <a class="song-card" href="#modal-lagu-4" data-genre="dangdut">
                 <div class="image-box">
                     <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&q=80&w=500" alt="Dangdut">
                 </div>
@@ -115,10 +115,78 @@
                         <span class="duration">3:50</span>
                     </div>
                 </div>
-            </div>
+            </a>
 
         </section>
     </main>
+
+    <!-- Popup kartu 1: Electric Anthem -->
+    <div id="modal-lagu-1" class="modal-overlay">
+        <div class="modal-box">
+            <a href="#close" class="tombol-tutup">&times;</a>
+            <h2>Electric Anthem</h2>
+            <p class="modal-artist">The Thunderers</p>
+            <div class="list-lagu">
+                <div class="item-lagu">
+                    <span><span class="genre-tag rock">Rock</span> &nbsp;3:45</span>
+                    <!-- Kalau file lagu sudah ada, hapus tulisan "Lagu belum tersedia" lalu pakai ini:
+                    <audio controls preload="none"><source src="audio/NAMA-FILE.mp3" type="audio/mpeg"></audio> -->
+                </div>
+            </div>
+            <p class="info-lagu">Lagu belum tersedia.</p>
+        </div>
+    </div>
+
+    <!-- Popup kartu 2: Midnight Lounge -->
+    <div id="modal-lagu-2" class="modal-overlay">
+        <div class="modal-box">
+            <a href="#close" class="tombol-tutup">&times;</a>
+            <h2>Midnight Lounge</h2>
+            <p class="modal-artist">Velvet Notes</p>
+            <div class="list-lagu">
+                <div class="item-lagu">
+                    <span><span class="genre-tag jazz">Jazz</span> &nbsp;4:12</span>
+                    <!-- Kalau file lagu sudah ada, hapus tulisan "Lagu belum tersedia" lalu pakai ini:
+                    <audio controls preload="none"><source src="audio/NAMA-FILE.mp3" type="audio/mpeg"></audio> -->
+                </div>
+            </div>
+            <p class="info-lagu">Lagu belum tersedia.</p>
+        </div>
+    </div>
+
+    <!-- Popup kartu 3: Starlight Dreams -->
+    <div id="modal-lagu-3" class="modal-overlay">
+        <div class="modal-box">
+            <a href="#close" class="tombol-tutup">&times;</a>
+            <h2>Starlight Dreams</h2>
+            <p class="modal-artist">Luna Ray</p>
+            <div class="list-lagu">
+                <div class="item-lagu">
+                    <span><span class="genre-tag pop">Pop</span> &nbsp;3:05</span>
+                    <!-- Kalau file lagu sudah ada, hapus tulisan "Lagu belum tersedia" lalu pakai ini:
+                    <audio controls preload="none"><source src="audio/NAMA-FILE.mp3" type="audio/mpeg"></audio> -->
+                </div>
+            </div>
+            <p class="info-lagu">Lagu belum tersedia.</p>
+        </div>
+    </div>
+
+    <!-- Popup kartu 4: Goyang Asyik (Hipdut) -->
+    <div id="modal-lagu-4" class="modal-overlay">
+        <div class="modal-box">
+            <a href="#close" class="tombol-tutup">&times;</a>
+            <h2>Goyang Asyik (Hipdut)</h2>
+            <p class="modal-artist">Siti & Orkes Ria</p>
+            <div class="list-lagu">
+                <div class="item-lagu">
+                    <span><span class="genre-tag dangdut">Dangdut</span> &nbsp;3:50</span>
+                    <!-- Kalau file lagu sudah ada, hapus tulisan "Lagu belum tersedia" lalu pakai ini:
+                    <audio controls preload="none"><source src="audio/NAMA-FILE.mp3" type="audio/mpeg"></audio> -->
+                </div>
+            </div>
+            <p class="info-lagu">Lagu belum tersedia.</p>
+        </div>
+    </div>
 
     <!-- JavaScript hanya untuk Menjalankan Filter Genre -->
     <script>
