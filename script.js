@@ -20,7 +20,7 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
     });
 
     if (akunDitemukan) {
-        window.location.href = "index.html";
+        window.location.href ="beranda.html";
     }
     else if (!usernameAda) {
         pesan.innerHTML = "LOGIN GAGAL!<br>Username Salah!";
