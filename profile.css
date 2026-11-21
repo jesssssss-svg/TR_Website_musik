@@ -1,0 +1,456 @@
+/* =========================
+   PENGATURAN DASAR
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #0f0c29, #120e38, #0a081d);
+    background-attachment: fixed;
+    color: #ffffff;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+header {
+    width: 100%;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+}
+
+.logo-link {
+    text-decoration: none;
+}
+
+.logo {
+    font-size: 26px;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.logo span {
+    color: #a855f7;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.navbar ul li a {
+    color: #c4bdd8;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.navbar ul li a:hover,
+.navbar ul li a.active {
+    color: #a855f7;
+}
+
+/* =========================
+   BACK BUTTON
+========================= */
+.back-container {
+    padding: 10px 8%;
+}
+
+.back-button {
+    display: inline-block;
+    color: #c4bdd8;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.back-button:hover {
+    color: #a855f7;
+}
+
+/* =========================
+   PROFILE CONTAINER
+========================= */
+.profile-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px 30px 60px;
+}
+
+/* =========================
+   HERO PROFILE
+========================= */
+.profile-hero {
+    text-align: center;
+    padding: 70px 20px 60px;
+}
+
+.profile-subtitle,
+.section-label {
+    color: #a855f7;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+.profile-hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.profile-hero h1 span {
+    color: #a855f7;
+}
+
+.profile-description {
+    color: #aaa5bd;
+    font-size: 15px;
+    line-height: 1.8;
+    max-width: 650px;
+    margin: auto;
+}
+
+/* =========================
+   DEVELOPER PROFILE
+========================= */
+.developer-section {
+    margin-bottom: 70px;
+}
+
+.profile-card {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding: 35px;
+    border: 1px solid rgba(168, 85, 247, 0.2);
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.profile-image {
+    flex-shrink: 0;
+    width: 250px;
+    height: 280px;
+    overflow: hidden;
+    border-radius: 18px;
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-info {
+    flex: 1;
+}
+
+.profile-info h2 {
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+.developer-role {
+    color: #a855f7;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.developer-description {
+    color: #aaa5bd;
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.profile-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.profile-tags span {
+    padding: 8px 14px;
+    border-radius: 20px;
+    border: 1px solid rgba(168, 85, 247, 0.3);
+    background: rgba(168, 85, 247, 0.1);
+    color: #d8b4fe;
+    font-size: 12px;
+}
+
+/* =========================
+   ABOUT WEBSITE
+========================= */
+.about-section {
+    margin-bottom: 70px;
+}
+
+.section-heading {
+    margin-bottom: 25px;
+}
+
+.section-heading h2 {
+    font-size: 30px;
+}
+
+.section-heading h2 span {
+    color: #a855f7;
+}
+
+.about-card {
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(168, 85, 247, 0.2);
+    border-radius: 16px;
+}
+
+.about-card p {
+    color: #aaa5bd;
+    font-size: 14px;
+    line-height: 1.9;
+    margin-bottom: 15px;
+}
+
+.about-card p:last-child {
+    margin-bottom: 0;
+}
+
+/* =========================
+   PURPOSE CARDS
+========================= */
+.purpose-section {
+    margin-bottom: 70px;
+}
+
+.purpose-grid {
+    display: flex;
+    gap: 20px;
+}
+
+.purpose-card {
+    flex: 1;
+    padding: 28px;
+    border: 1px solid rgba(168, 85, 247, 0.2);
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.04);
+    transition: 0.3s;
+}
+
+.purpose-card:hover {
+    border-color: #a855f7;
+}
+
+.purpose-card i {
+    color: #a855f7;
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.purpose-card h3 {
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+
+.purpose-card p {
+    color: #aaa5bd;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+/* =========================
+   TECHNOLOGY
+========================= */
+.technology-section {
+    margin-bottom: 30px;
+}
+
+.technology-card {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.technology-item {
+    flex: 1;
+    min-width: 230px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 25px;
+    border: 1px solid rgba(168, 85, 247, 0.2);
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.technology-item i {
+    font-size: 35px;
+    color: #a855f7;
+}
+
+.technology-item h3 {
+    margin-bottom: 8px;
+    font-size: 17px;
+}
+
+.technology-item p {
+    color: #aaa5bd;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+/* =========================
+   FOOTER
+========================= */
+.footer {
+    width: 100%;
+    padding: 50px 8% 20px;
+    margin-top: 60px;
+    background: rgba(15, 12, 35, 0.85);
+    border-top: 1px solid rgba(168, 85, 247, 0.2);
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.footer-about {
+    max-width: 350px;
+}
+
+.footer-logo {
+    font-size: 28px;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+.footer-logo span {
+    color: #a855f7;
+}
+
+.footer-about p {
+    color: #aaa5bd;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.footer-navigation {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-navigation h3,
+.footer-information h3 {
+    color: #ffffff;
+    margin-bottom: 10px;
+    font-size: 17px;
+}
+
+.footer-navigation a {
+    text-decoration: none;
+    color: #aaa5bd;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.footer-navigation a:hover {
+    color: #a855f7;
+    padding-left: 5px;
+}
+
+.footer-information {
+    max-width: 250px;
+}
+
+.footer-information p {
+    color: #aaa5bd;
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 8px;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 40px;
+    padding-top: 20px;
+}
+
+.footer-bottom p {
+    color: #858098;
+    font-size: 12px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media screen and (max-width: 768px) {
+
+    .navbar {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .navbar ul {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .profile-hero h1 {
+        font-size: 35px;
+    }
+
+    .profile-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profile-image {
+        width: 200px;
+        height: 230px;
+    }
+
+    .profile-tags {
+        justify-content: center;
+    }
+
+    .purpose-grid {
+        flex-direction: column;
+    }
+
+    .section-heading h2 {
+        font-size: 25px;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
