@@ -46,7 +46,7 @@
             <p>Explore your favorite music, discover new artists, and find the perfect playlist for every mood.</p>
         </section>
 
-        <!-- FILTER PLAYLIST TANPA JAVASCRIPT -->
+        <!-- FILTER PLAYLIST -->
         <section class="playlist-filter">
 
             <!-- RADIO BUTTON -->
@@ -137,8 +137,8 @@
                     </div>
                 </details>
 
-                <!-- ================= LOVE SONG ================= -->
-                <details class="playlist-expand love-playlist">
+              <!-- ================= LOVE SONG ================= -->
+                <details class="playlist-expand love-playlist" id="love-song-section">
 
                     <summary class="song-card">
 
@@ -299,25 +299,6 @@
         </section>
 
     </main>
-
-    <!-- LETAKKAN DI SINI (tepat sebelum </body>) -->
-    <script>
-        window.addEventListener('DOMContentLoaded', () => {
-            const params = new URLSearchParams(window.location.search);
-            if (params.get('open') === 'love' || window.location.hash === '#love-song-section') {
-                const radioLove = document.getElementById('filter-love');
-                const detailsLove = document.querySelector('.love-playlist');
-
-                if (radioLove) {
-                    radioLove.checked = true;
-                }
-                if (detailsLove) {
-                    detailsLove.open = true;
-                    detailsLove.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            }
-        });
-    </script>
 
 </body>
 </html>

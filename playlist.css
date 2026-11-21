@@ -459,3 +459,22 @@ footer {
 #filter-night:checked ~ .music-grid > .night-playlist {
     display: block;
 }
+
+/* =========================================
+   LINK DARI GENRE POP KE LOVE SONG
+   ========================================= */
+
+/* Jika Love Song dibuka dari link Genre */
+.music-grid:has(#love-song-section:target) > .playlist-expand {
+    display: none;
+}
+
+/* Menampilkan Love Song saja */
+.music-grid:has(#love-song-section:target) > #love-song-section {
+    display: block;
+}
+
+/* Menampilkan isi playlist Love Song */
+#love-song-section:target .playlist-content {
+    display: block;
+}
