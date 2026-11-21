@@ -1,12 +1,5 @@
 /* =====================================================
-   artist.css  -  Halaman Artist LOOPIFY
-   Dipakai oleh artist.html (urutan kode mengikuti HTML:
-   header -> daftar artis -> popup -> footer)
-   ===================================================== */
-
-
-/* =====================================================
-   1. PENGATURAN DASAR (berlaku untuk semua elemen)
+    PENGATURAN DASAR (berlaku untuk semua elemen)
    ===================================================== */
 
 /* Reset: hilangkan jarak bawaan browser dan samakan jenis huruf */
@@ -27,16 +20,14 @@ body {
     flex-direction: column;
 }
 
-
 /* =====================================================
-   2. HEADER & NAVBAR  (<header> dan <nav class="navbar">)
+    HEADER & NAVBAR  (<header> dan <nav class="navbar">)
    ===================================================== */
 
 /* Bar atas berwarna biru tua.
    sticky + top: 0 = navbar tetap menempel di atas saat halaman di-scroll */
 header {
-    background-color: rgba(10, 8, 29, 0.7);  
-    backdrop-filter: blur(10px); 
+    background-color: rgba(10, 8, 29, 0.7);
     padding: 20px 40px;
     position: sticky;
     top: 0;
@@ -50,26 +41,14 @@ header {
     align-items: center;
 }
 
-/* Tulisan LOOPIFY (<h2 class="logo">) */
+/* Tulisan LOOPIFY (<h2 class="logo">), sama dengan halaman teman */
 .logo {
-    font-size: 26px;
-    font-weight: 800;
-    letter-spacing: 2px;
+    font-size: 27px;
     color: white;
 }
 
-.navbar .logo a {
-    font-size: 26px;
-    font-weight: 800;
-    letter-spacing: 2px;
-    color: white;
-    text-decoration: none;
-}
-
-.navbar .logo a span {
-    font-size: 26px;
-    font-weight: 800;
-    letter-spacing: 2px;
+/* Tulisan "IFY" berwarna ungu */
+.logo span {
     color: #c084fc;
 }
 
@@ -80,7 +59,7 @@ header {
     gap: 30px;
 }
 
-/* Tampilan link menu */
+/* Tampilan link menu (juga berlaku untuk link logo) */
 .navbar a {
     text-decoration: none;
     color: white;
@@ -93,9 +72,8 @@ header {
     color: #c084fc;
 }
 
-
 /* =====================================================
-   3. BAGIAN DAFTAR ARTIS  (<section class="artist-section">)
+    BAGIAN DAFTAR ARTIS  (<section class="artist-section">)
    ===================================================== */
 
 /* Jarak di sekeliling seluruh bagian artis */
@@ -172,7 +150,7 @@ a.artist-card {
 
 
 /* =====================================================
-   5. POPUP LAGU  (<div class="modal-overlay"> dari HTML)
+    POPUP LAGU  (<div class="modal-overlay"> dari HTML)
    Cara kerja: kartu menuju #modal-nama-artis, dan popup
    yang id-nya cocok akan tampil lewat :target (tanpa JavaScript)
    ===================================================== */
@@ -238,7 +216,7 @@ a.artist-card {
 
 
 /* =====================================================
-   6. DAFTAR LAGU & PEMUTAR AUDIO DI DALAM POPUP
+    DAFTAR LAGU & PEMUTAR AUDIO DI DALAM POPUP
    ===================================================== */
 
 /* Pembungkus semua lagu: tersusun ke bawah dengan jarak antar lagu */
@@ -284,7 +262,7 @@ a.artist-card {
 
 
 /* =====================================================
-   7. TAMPILAN HP / LAYAR KECIL (kartu & popup)
+    TAMPILAN HP / LAYAR KECIL (kartu & popup)
    ===================================================== */
 
 /* Layar sedang (tablet): kartu artis jadi 2 kolom */
@@ -313,7 +291,7 @@ a.artist-card {
 
 
 /* =====================================================
-   8. FOOTER  (<footer>)
+    FOOTER  (<footer>)
    ===================================================== */
 
 /* Bagian bawah halaman */
@@ -331,7 +309,7 @@ footer span {
 
 
 /* =====================================================
-   9. TAMPILAN HP UNTUK NAVBAR
+    TAMPILAN HP UNTUK NAVBAR
    (.hero dan .music-container tidak dipakai di artist.html,
     kemungkinan sisa dari halaman lain; boleh dihapus nanti)
    ===================================================== */
@@ -363,4 +341,26 @@ footer span {
     .music-container {
         grid-template-columns: 1fr;
     }
+}
+
+/* =====================================================
+    NAVBAR SOLID (tanpa blur dan tanpa tembus pandang)
+   Ditaruh paling bawah supaya menimpa aturan dari file CSS lain
+   ===================================================== */
+header,
+header:first-of-type {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: #0a081d;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+header .navbar {
+    background-color: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border-bottom: none;
 }
