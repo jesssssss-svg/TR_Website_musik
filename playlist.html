@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOOPIFY | Katalog playlist Musik</title>
+    <link rel="stylesheet" href="playlist.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header>
+        <nav class="navbar">
+            <a href="beranda.html" class="logo-link">
+                <h2 class="logo">LOOP<span>IFY</span></h2>
+            </a>
+
+            <ul>
+                <li><a href="genre.html">Genre</a></li>
+                <li><a href="artist.html">Artist</a></li>
+                <li><a href="playlist.html">Playlist</a></li>
+                <li><a href="profile.html">Profile</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- SEARCH BAR -->
+    <header class="navbar">
+        <div class="logo-container">
+        </div>
+
+        <div class="search-container">
+            <span class="search-icon">⌕</span>
+            <input type="text" placeholder="Search music..."
+                   class="search-input" readonly tabindex="-1">
+        </div>
+    </header>
+
+    <!-- KONTEN UTAMA -->
+    <main class="main-container">
+
+        <!-- HERO SECTION -->
+        <section class="hero-section">
+            <p class="hero-subtitle">WELCOME TO LOOPIFY</p>
+            <h1>Discover Your <span class="loopify-title">Music</span></h1>
+            <p>Explore your favorite music, discover new artists, and find the perfect playlist for every mood.</p>
+        </section>
+
+        <!-- FILTER PLAYLIST TANPA JAVASCRIPT -->
+        <section class="playlist-filter">
+
+            <!-- RADIO BUTTON -->
+            <input type="radio" name="playlist-filter" id="filter-all" checked>
+            <input type="radio" name="playlist-filter" id="filter-study">
+            <input type="radio" name="playlist-filter" id="filter-love">
+            <input type="radio" name="playlist-filter" id="filter-sad">
+            <input type="radio" name="playlist-filter" id="filter-night">
+
+            <!-- TOMBOL FILTER -->
+            <div class="genre-filters">
+
+                <label for="filter-all" class="filter-btn">
+                    All Playlist
+                </label>
+
+                <label for="filter-study" class="filter-btn">
+                    Study Time
+                </label>
+
+                <label for="filter-love" class="filter-btn">
+                    Love Song
+                </label>
+
+                <label for="filter-sad" class="filter-btn">
+                    Sad Song
+                </label>
+
+                <label for="filter-night" class="filter-btn">
+                    Night Drive
+                </label>
+
+            </div>
+
+            <!-- GRID PLAYLIST -->
+            <section class="music-grid" id="songGrid">
+
+                <!-- ================= STUDY TIME ================= -->
+                <details class="playlist-expand study-playlist">
+
+                    <summary class="song-card">
+
+                        <div class="image-box">
+                            <img src="TR_Website_musik/foto/study_time.png" alt="Study Time">
+                        </div>
+
+                        <div class="song-info">
+                            <h3>Study Time</h3>
+                            <p>Focus &amp; Productivity</p>
+                            <div class="card-footer"></div>
+                        </div>
+
+                    </summary>
+
+                    <div class="playlist-content">
+
+                        <h2>Study Time Playlist</h2>
+                        <p>Music to accompany your study time.</p>
+
+                        <!-- LAGU 1 -->
+                        <div class="playlist-track">
+                            <span>01</span>
+
+                            <div class="track-info">
+                                <h3>CRUEL SUMMER</h3>
+                                <p>Taylor Swift</p>
+
+                                <audio controls>
+                                    <source src="TR_Website_musik/musik/Taylor Swift - Cruel Summer.mp3" type="audio/mpeg">
+                                </audio>
+                            </div>
+                        </div>
+
+                        <!-- LAGU 2 -->
+                        <div class="playlist-track">
+                            <span>02</span>
+
+                            <div class="track-info">
+                                <h3>EVERYTHING U ARE</h3>
+                                <p>Hindia</p>
+
+                                <audio controls>
+                                    <source src="TR_Website_musik/musik/Hindia - everything u are Lirik Lagu.mp3" type="audio/mpeg">
+                                </audio>
+                            </div>
+                        </div>
+
+                    </div>
+                </details>
+
+                <!-- ================= LOVE SONG ================= -->
+                <details class="playlist-expand love-playlist">
+
+                    <summary class="song-card">
+
+                        <div class="image-box">
+                            <img src="TR_Website_musik/foto/love song.jpg" alt="Love Song">
+                        </div>
+
+                        <div class="song-info">
+                            <h3>Love Song</h3>
+                            <div class="card-footer"></div>
+                        </div>
+
+                    </summary>
+
+                    <div class="playlist-content">
+
+                        <h2>Love Song Playlist</h2>
+                        <p>Music to accompany your love song.</p>
+
+                        <!-- LAGU 1 -->
+                        <div class="playlist-track">
+                            <span>01</span>
+
+                            <div class="track-info">
+                                <h3>NOTHING</h3>
+                                <p>Bruno Major</p>
+
+                                <audio controls>
+                                    <source src="TR_Website_musik/musik/Bruno Major - Nothing (Lyrics).mp3" type="audio/mpeg">
+                                </audio>
+                            </div>
+                        </div>
+
+                        <!-- LAGU 2 -->
+                        <div class="playlist-track">
+                            <span>02</span>
+
+                            <div class="track-info">
+                                <h3>AKAD</h3>
+                                <p>Payung Teduh</p>
+
+                                <audio controls>
+                                    <source src="TR_Website_musik/musik/Payung Teduh - Akad (Official Music Video).mp3" type="audio/mpeg">
+                                </audio>
+                            </div>
+                        </div>
+
+                    </div>
+                </details>
+
+                <!-- ================= SAD SONG ================= -->
+                <details class="playlist-expand sad-playlist">
+
+                    <summary class="song-card">
+
+                        <div class="image-box">
+                            <img src="TR_Website_musik/foto/sad song.jpg" alt="Sad Song">
+                        </div>
+
+                        <div class="song-info">
+                            <h3>Sad Song</h3>
+                            <p>Emotional Collection</p>
+                            <div class="card-footer"></div>
+                        </div>
+
+                    </summary>
+
+                    <div class="playlist-content">
+
+                        <h2>Sad Song Playlist</h2>
+                        <p>Music to accompany your sad song.</p>
+
+                        <!-- LAGU 1 -->
+                        <div class="playlist-track">
+                            <span>01</span>
+
+                            <div class="track-info">
+                                <h3>WHEN I WAS YOUR MAN</h3>
+                                <p>Bruno Mars</p>
+
+                                <audio controls>
+                                    <source src="TR_Website_musik/musik/Bruno Mars - When I Was Your Man.mp3" type="audio/mpeg">
+                                </audio>
+                            </div>
+                        </div>
+
+                         <!-- LAGU 2 -->
+                        <div class="playlist-track">
+                            <span>02</span>
+
+                            <div class="track-info">
+                                <h3>DEJA VU</h3>
+                                <p>Olivia Rodrigo</p>
+
+                                <audio controls>
+                                    <source src="TR_Website_musik/musik/Olivia Rodrigo - deja vu.mp3" type="audio/mpeg">
+                                </audio>
+                            </div>
+                        </div>
+
+                    </div>
+                </details>
+
+                <!-- ================= NIGHT DRIVE ================= -->
+                <details class="playlist-expand night-playlist">
+
+                    <summary class="song-card">
+
+                        <div class="image-box">
+                            <img src="TR_Website_musik/foto/night song.jpg" alt="Night Drive">
+                        </div>
+
+                        <div class="song-info">
+                            <h3>Night Drive</h3>
+                            <p>Late Night Collection</p>
+                            <div class="card-footer"></div>
+                        </div>
+
+                    </summary>
+
+                    <div class="playlist-content">
+
+                        <h2>Night Drive Playlist</h2>
+                        <p>Music for your late night moments.</p>
+
+                        <!-- LAGU 1 -->
+                        <div class="playlist-track">
+                            <span>01</span>
+
+                            <div class="track-info">
+                                <h3>LOWKEY</h3>
+                                <p>NIKI</p>
+
+                                <audio controls>
+                                    <source src="TR_Website_musik/musik/NIKI - lowkey (Lyrics).mp3" type="audio/mpeg">
+                                </audio>
+                            </div>
+                        </div>
+
+                        <!-- LAGU 2 -->
+                        <div class="playlist-track">
+                            <span>02</span>
+
+                            <div class="track-info">
+                                <h3>SHAPE OF MY HEART</h3>
+                                <p>Backstreet Boys</p>
+
+                                <audio controls>
+                                    <source src="TR_Website_musik/musik/Shape of My Heart - Backstreet Boys.mp3" type="audio/mpeg">
+                                </audio>
+                            </div>
+                        </div>
+
+                    </div>
+                </details>
+
+            </section>
+        </section>
+
+    </main>
+
+</body>
+</html>

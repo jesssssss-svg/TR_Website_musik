@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOOPIFY | Katalog Genre Musik</title>
+    <link rel="stylesheet" href="genre1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+     <header>
+        <nav class="navbar">
+           <a href="beranda.html" class="logo-link">
+    <h2 class="logo">LOOP<span>IFY</span></h2>
+</a>
+            <ul>
+                <li><a href="genre.html">Genre</a></li>
+                <li><a href="artist.html">Artist</a></li>
+                <li><a href="playlist.html">Playlist</a></li>
+                <li><a href="profile.html">Profile</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Header / Navbar dengan Search Bar Pajangan di Kanan Atas -->
+    <header class="navbar">
+        <div class="logo-container">
+            <!-- Logo LOOPIFY dengan warna gradasi persis SS -->
+        </div>
+
+        <!-- Search Bar hanya pajangan (tidak bisa diklik atau diketik) -->
+        <div class="search-container" style="pointer-events: none; user-select: none;">
+            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+            <input type="text" placeholder="Search music..." class="search-input" readonly tabindex="-1">
+        </div>
+    </header>
+
+    <!-- Konten Utama -->
+    <main class="main-container">
+        <section class="hero-section">
+            <p class="hero-subtitle">WELCOME TO LOOPIFY</p>
+            <h1>Discover Your <span class="loopify-title">Music</span></h1>
+            <p>Explore your favorite music, discover new artists, and find the perfect playlist for every mood.</p>
+        </section>
+
+        <!-- Tombol Filter Genre (Interaktif) -->
+        <div class="genre-filters">
+            <button onclick="filterGenre('all')" class="filter-btn active">All Genre</button>
+            <button onclick="filterGenre('rock')" class="filter-btn">Rock</button>
+            <button onclick="filterGenre('jazz')" class="filter-btn">Jazz</button>
+            <button onclick="filterGenre('pop')" class="filter-btn">Pop</button>
+            <button onclick="filterGenre('dangdut')" class="filter-btn">Dangdut / Hipdut</button>
+        </div>
+
+        <!-- Grid Kartu Musik (Setiap card diberi attribute data-genre) -->
+        <section class="music-grid" id="songGrid">
+            
+            <!-- Kartu 1: pop -->
+            <a class="song-card" href="#modal-lagu-1" data-genre="pop">
+                <div class="image-box">
+                    <img src="foto/genre pop.jpg" alt="pop">
+                </div>
+                <div class="song-info">
+                    <h3>Electric Anthem</h3>
+                    <p class="artist-name">The Thunderers</p>
+                    <div class="card-footer">
+                        <span class="genre-tag pop">pop</span>
+                        <span class="duration">3:45</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Kartu 2: Jazz -->
+            <a class="song-card" href="#modal-lagu-2" data-genre="jazz">
+                <div class="image-box">
+                    <img src="foto/genre jazz.jpg" alt="Jazz">
+                </div>
+                <div class="song-info">
+                    <h3>Midnight Lounge</h3>
+                    <p class="artist-name">Velvet Notes</p>
+                    <div class="card-footer">
+                        <span class="genre-tag jazz">Jazz</span>
+                        <span class="duration">4:12</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Kartu 3: rock -->
+            <a class="song-card" href="#modal-lagu-3" data-genre="rock">
+                <div class="image-box">
+                    <img src="foto/genre rock.jpg" alt="rock">
+                </div>
+                <div class="song-info">
+                    <h3>Starlight Dreams</h3>
+                    <p class="artist-name">Luna Ray</p>
+                    <div class="card-footer">
+                        <span class="genre-tag rock">rock</span>
+                        <span class="duration">3:05</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Kartu 4: Dangdut / Hipdut -->
+            <a class="song-card" href="#modal-lagu-4" data-genre="dangdut">
+                <div class="image-box">
+                    <img src="foto/genre dangdut.jpg" alt="Dangdut">
+                </div>
+                <div class="song-info">
+                    <h3>Goyang Asyik (Hipdut)</h3>
+                    <p class="artist-name">Siti & Orkes Ria</p>
+                    <div class="card-footer">
+                        <span class="genre-tag dangdut">Dangdut</span>
+                        <span class="duration">3:50</span>
+                    </div>
+                </div>
+            </a>
+
+        </section>
+    </main>
+
+    <!-- Popup kartu 1: Electric Anthem -->
+    <div id="modal-lagu-1" class="modal-overlay">
+        <div class="modal-box">
+            <a href="#close" class="tombol-tutup">&times;</a>
+            <h2>Electric Anthem</h2>
+            <p class="modal-artist">The Thunderers</p>
+            <div class="list-lagu">
+                <div class="item-lagu">
+                    <span><span class="genre-tag rock">Rock</span> &nbsp;3:45</span>
+                    <!-- Kalau file lagu sudah ada, hapus tulisan "Lagu belum tersedia" lalu pakai ini:
+                    <audio controls preload="none"><source src="audio/NAMA-FILE.mp3" type="audio/mpeg"></audio> -->
+                </div>
+            </div>
+            <p class="info-lagu">Lagu belum tersedia.</p>
+        </div>
+    </div>
+
+    <!-- Popup kartu 2: Midnight Lounge -->
+    <div id="modal-lagu-2" class="modal-overlay">
+        <div class="modal-box">
+            <a href="#close" class="tombol-tutup">&times;</a>
+            <h2>Midnight Lounge</h2>
+            <p class="modal-artist">Velvet Notes</p>
+            <div class="list-lagu">
+                <div class="item-lagu">
+                    <span><span class="genre-tag jazz">Jazz</span> &nbsp;4:12</span>
+                    <!-- Kalau file lagu sudah ada, hapus tulisan "Lagu belum tersedia" lalu pakai ini:
+                    <audio controls preload="none"><source src="audio/NAMA-FILE.mp3" type="audio/mpeg"></audio> -->
+                </div>
+            </div>
+            <p class="info-lagu">Lagu belum tersedia.</p>
+        </div>
+    </div>
+
+    <!-- Popup kartu 3: Starlight Dreams -->
+    <div id="modal-lagu-3" class="modal-overlay">
+        <div class="modal-box">
+            <a href="#close" class="tombol-tutup">&times;</a>
+            <h2>Starlight Dreams</h2>
+            <p class="modal-artist">Luna Ray</p>
+            <div class="list-lagu">
+                <div class="item-lagu">
+                    <span><span class="genre-tag pop">Pop</span> &nbsp;3:05</span>
+                    <!-- Kalau file lagu sudah ada, hapus tulisan "Lagu belum tersedia" lalu pakai ini:
+                    <audio controls preload="none"><source src="audio/NAMA-FILE.mp3" type="audio/mpeg"></audio> -->
+                </div>
+            </div>
+            <p class="info-lagu">Lagu belum tersedia.</p>
+        </div>
+    </div>
+
+    <!-- Popup kartu 4: Goyang Asyik (Hipdut) -->
+    <div id="modal-lagu-4" class="modal-overlay">
+        <div class="modal-box">
+            <a href="#close" class="tombol-tutup">&times;</a>
+            <h2>Goyang Asyik (Hipdut)</h2>
+            <p class="modal-artist">Siti & Orkes Ria</p>
+            <div class="list-lagu">
+                <div class="item-lagu">
+                    <span><span class="genre-tag dangdut">Dangdut</span> &nbsp;3:50</span>
+                    <!-- Kalau file lagu sudah ada, hapus tulisan "Lagu belum tersedia" lalu pakai ini:
+                    <audio controls preload="none"><source src="audio/NAMA-FILE.mp3" type="audio/mpeg"></audio> -->
+                </div>
+            </div>
+            <p class="info-lagu">Lagu belum tersedia.</p>
+        </div>
+    </div>
+
+    <!-- JavaScript hanya untuk Menjalankan Filter Genre -->
+    <script>
+        function filterGenre(genre) {
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            const cards = document.querySelectorAll('.song-card');
+            cards.forEach(card => {
+                if (genre === 'all' || card.dataset.genre === genre) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
