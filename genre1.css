@@ -376,10 +376,3 @@ a.song-card {
     max-width: 240px;
     border-radius: 20px;
 }
-
-/* Tulisan "Lagu belum tersedia." */
-.info-lagu {
-    color: #aaa;
-    text-align: center;
-    padding: 12px 0 0;
-}

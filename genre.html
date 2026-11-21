@@ -167,22 +167,6 @@
          </div>     
     </div>
 
-    <!-- JavaScript hanya untuk Menjalankan Filter Genre -->
-    <script>
-        function filterGenre(genre) {
-            const buttons = document.querySelectorAll('.filter-btn');
-            buttons.forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
-
-            const cards = document.querySelectorAll('.song-card');
-            cards.forEach(card => {
-                if (genre === 'all' || card.dataset.genre === genre) {
-                    card.style.display = 'block';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        }
-    </script>
+   
 </body>
 </html>
