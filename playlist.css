@@ -43,12 +43,6 @@ header:first-of-type {
     gap: 12px;
 }
 
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
 .logo {
     font-size: 27px;
     color: white;
@@ -80,9 +74,10 @@ header:first-of-type {
     font-size: 26px;
     font-weight: 800;
     letter-spacing: 2px;
-    background: linear-gradient(90deg, #edeaf0 0%);
+    background: linear-gradient(90deg, #edeaf0);
+    background-clip: text;
+    -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-
 }
 
 .logo-text span {
@@ -90,7 +85,10 @@ header:first-of-type {
     font-weight: 800;
     letter-spacing: 2px;
     background: linear-gradient(90deg, #c084fc);
+    background-clip: text;
+    -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    
     
 }
 
@@ -98,6 +96,8 @@ header:first-of-type {
 .search-container {
     position: relative;
     width: 260px;
+    pointer-events: none;
+    user-select: none;
 }
 
 .search-input {
@@ -389,4 +389,73 @@ footer {
     .song-name audio {
         max-width: 100%;
     }
+}
+
+/* Responsive Navbar dan Hero untuk tampilan d hp*/
+@media (max-width: 600px) {
+    .navbar ul {
+        gap: 8px;
+        flex-wrap: wrap;
+    }
+
+    .navbar {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .search-container {
+        width: 100%;
+    }
+}
+
+/* Menyembunyikan radio button */
+.playlist-filter input[type="radio"] {
+    display: none;
+}
+
+/* Tampilan tombol filter */
+.playlist-filter .filter-btn {
+    display: inline-block;
+}
+
+/* Tampilan tombol saat dipilih */
+#filter-all:checked ~ .genre-filters label[for="filter-all"],
+#filter-study:checked ~ .genre-filters label[for="filter-study"],
+#filter-love:checked ~ .genre-filters label[for="filter-love"],
+#filter-sad:checked ~ .genre-filters label[for="filter-sad"],
+#filter-night:checked ~ .genre-filters label[for="filter-night"] {
+    background-color: #a855f7;
+    color: #ffffff;
+    border-color: #a855f7;
+    font-weight: 600;
+}
+
+/* Menyembunyikan semua playlist terlebih dahulu */
+.playlist-filter .music-grid > .playlist-expand {
+    display: none;
+}
+
+/* Menampilkan semua playlist */
+#filter-all:checked ~ .music-grid > .playlist-expand {
+    display: block;
+}
+
+/* Menampilkan playlist Study Time */
+#filter-study:checked ~ .music-grid > .study-playlist {
+    display: block;
+}
+
+/* Menampilkan playlist Love Song */
+#filter-love:checked ~ .music-grid > .love-playlist {
+    display: block;
+}
+
+/* Menampilkan playlist Sad Song */
+#filter-sad:checked ~ .music-grid > .sad-playlist {
+    display: block;
+}
+
+/* Menampilkan playlist Night Drive */
+#filter-night:checked ~ .music-grid > .night-playlist {
+    display: block;
 }
