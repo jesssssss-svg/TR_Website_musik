@@ -22,7 +22,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 20px 40px;
-    background-color: rgba(10, 8, 29, 0.7);
+    background-color:rgba(10, 8, 29, 0.7);
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(10px);
 }
@@ -73,6 +73,7 @@ body {
     background: linear-gradient(90deg, #edeaf0 0%);
     -webkit-text-fill-color: transparent;
 
+    
 }
 
 .logo-text span {
@@ -374,11 +375,4 @@ a.song-card {
     height: 34px;
     max-width: 240px;
     border-radius: 20px;
-}
-
-/* Tulisan "Lagu belum tersedia." */
-.info-lagu {
-    color: #aaa;
-    text-align: center;
-    padding: 12px 0 0;
 }

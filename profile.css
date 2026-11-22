@@ -1,0 +1,389 @@
+/* =========================
+   BASIC
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: #0f0c19;
+    color: white;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+}
+
+.logo-link {
+    text-decoration: none;
+}
+
+.logo {
+    color: white;
+    font-size: 26px;
+}
+
+.logo span {
+    color: #a855f7;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.navbar ul a {
+    text-decoration: none;
+    color: #b8b3c7;
+    font-size: 14px;
+}
+
+.navbar ul a:hover,
+.navbar ul a.active {
+    color: #a855f7;
+}
+
+
+/* =========================
+   BACK BUTTON
+========================= */
+.back-container {
+    padding: 15px 8%;
+}
+
+.back-button {
+    text-decoration: none;
+    color: #b8b3c7;
+    font-size: 14px;
+}
+
+.back-button:hover {
+    color: #a855f7;
+}
+
+
+/* =========================
+   PROFILE HEADER
+========================= */
+.profile-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 30px 50px;
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    padding: 50px 40px;
+    background: linear-gradient(135deg, #39245d, #201634, #151020);
+    border-radius: 18px;
+}
+
+.profile-picture {
+    width: 230px;
+    height: 230px;
+    flex-shrink: 0;
+}
+
+.profile-picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.4);
+}
+
+.profile-details {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.profile-type {
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.profile-details h1 {
+    font-size: 55px;
+    font-weight: 700;
+}
+
+.profile-description {
+    color: #d0c9df;
+    font-size: 14px;
+}
+
+.profile-info {
+    color: #c5bdd8;
+    font-size: 13px;
+}
+
+.profile-info span {
+    font-weight: bold;
+    color: white;
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+.about-section,
+.project-section,
+.interest-section {
+    margin-top: 45px;
+}
+
+.about-section h2,
+.project-section h2,
+.interest-section h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.about-content {
+    padding: 25px;
+    background: #1b1728;
+    border-radius: 12px;
+}
+
+.about-content p {
+    color: #b8b3c7;
+    line-height: 1.8;
+    font-size: 14px;
+}
+
+
+/* =========================
+   PROJECT
+========================= */
+.project-card {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    padding: 22px;
+    background: #1b1728;
+    border-radius: 12px;
+}
+
+.project-image {
+    width: 180px;
+    height: 180px;
+    flex-shrink: 0;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.project-text {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.project-label {
+    color: #a855f7;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.project-text h3 {
+    font-size: 28px;
+}
+
+.project-text p {
+    color: #b8b3c7;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.project-text .project-tech {
+    color: #d8b4fe;
+    font-size: 12px;
+}
+
+
+/* =========================
+   INTEREST
+========================= */
+.interest-list {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.interest-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #1b1728;
+    padding: 18px 25px;
+    border-radius: 10px;
+}
+
+.interest-item i {
+    color: #a855f7;
+    font-size: 18px;
+}
+
+.interest-item span {
+    color: #e4dced;
+    font-size: 14px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+.footer {
+    width: 100%;
+    padding: 50px 8% 20px;
+    margin-top: 60px;
+    background: #0b0913;
+    border-top: 1px solid rgba(168, 85, 247, 0.2);
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.footer-about {
+    max-width: 350px;
+}
+
+.footer-logo {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.footer-logo span {
+    color: #a855f7;
+}
+
+.footer-about p {
+    color: #aaa5bd;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.footer-navigation {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-navigation h3,
+.footer-information h3 {
+    font-size: 17px;
+    margin-bottom: 10px;
+}
+
+.footer-navigation a {
+    text-decoration: none;
+    color: #aaa5bd;
+    font-size: 14px;
+}
+
+.footer-navigation a:hover {
+    color: #a855f7;
+}
+
+.footer-information {
+    max-width: 250px;
+}
+
+.footer-information p {
+    color: #aaa5bd;
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 8px;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 40px;
+    padding-top: 20px;
+}
+
+.footer-bottom p {
+    color: #858098;
+    font-size: 12px;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media screen and (max-width: 768px) {
+
+    .navbar {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .navbar ul {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .profile-header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 30px;
+    }
+
+    .profile-picture {
+        width: 180px;
+        height: 180px;
+    }
+
+    .profile-details h1 {
+        font-size: 36px;
+    }
+
+    .project-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .project-image {
+        width: 100%;
+        height: 220px;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+    }
+}
