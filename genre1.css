@@ -16,6 +16,17 @@ body {
     flex-direction: column;
 }
 
+/* Bar navigasi paling atas (LOOPIFY, Home, Genre, dll.) tetap menempel saat di-scroll */
+header:first-of-type {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: rgba(10, 8, 29, 0.92);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+
 /* Navbar */
 .navbar {
     display: flex;
