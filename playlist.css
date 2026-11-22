@@ -69,6 +69,34 @@ header:first-of-type {
     color: #c084fc;
 }
 
+/* Tombol Back sejajar dengan Search bar */
+.back-container {
+    display: flex;
+    align-items: center;
+    padding: 15px 8%;
+}
+
+.back-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: 12px;
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: none;
+    color: #cbd5e1;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    transition: all 0.2s;
+}
+
+.back-button:hover {
+    color: #ffffff;
+    border-color: #c084fc;
+    background-color: rgba(168, 85, 247, 0.15);
+}
+
 /* Font & Warna LOOPIFY persis seperti SS (Gradasi Pink/Ungu Muda ke Putih) */
 .logo-text {
     font-size: 26px;
