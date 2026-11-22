@@ -6,14 +6,33 @@
     <title>LOOPIFY | Katalog Genre Musik</title>
     <link rel="stylesheet" href="genre1.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Jaga agar navbar atas tetap menempel saat di-scroll */
+        body > header:first-of-type {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        /* Tombol nonaktif tetap terlihat sama persis dengan tombol biasa (tidak redup) */
+        .filter-btn.disabled-btn {
+            pointer-events: none;
+        }
+
+        /* Kartu nonaktif tetap terlihat sama persis dengan kartu Pop (tidak redup) */
+        .song-card.locked-card {
+            pointer-events: none;
+            user-select: none;
+        }
+    </style>
 </head>
 <body>
 
-     <header>
+    <header>
         <nav class="navbar">
-           <a href="beranda.html" class="logo-link">
-    <h2 class="logo">LOOP<span>IFY</span></h2>
-</a>
+            <a href="beranda.html" class="logo-link">
+                <h2 class="logo">LOOP<span>IFY</span></h2>
+            </a>
             <ul>
                 <li><a href="genre.html">Genre</a></li>
                 <li><a href="artist.html">Artist</a></li>
@@ -44,19 +63,19 @@
             <p>Explore your favorite music, discover new artists, and find the perfect playlist for every mood.</p>
         </section>
 
-        <!-- Tombol Filter Genre (Interaktif) -->
+        <!-- Tombol Filter Genre: tampilan sama semua, hanya Pop yang bisa diklik -->
         <div class="genre-filters">
-            <button onclick="filterGenre('all')" class="filter-btn active">All Genre</button>
-            <button onclick="filterGenre('pop')" class="filter-btn">Pop</button>
-            <button onclick="filterGenre('jazz')" class="filter-btn">Jazz</button>
-            <button onclick="filterGenre('rock')" class="filter-btn">Rock</button>
-            <button onclick="filterGenre('dangdut')" class="filter-btn">Dangdut / Hipdut</button>
+            <button type="button" class="filter-btn active disabled-btn" tabindex="-1">All Genre</button>
+            <button type="button" class="filter-btn">Pop</button>
+            <button type="button" class="filter-btn disabled-btn" tabindex="-1">Jazz</button>
+            <button type="button" class="filter-btn disabled-btn" tabindex="-1">Rock</button>
+            <button type="button" class="filter-btn disabled-btn" tabindex="-1">Dangdut / Hipdut</button>
         </div>
 
-        <!-- Grid Kartu Musik (Setiap card diberi attribute data-genre) -->
+        <!-- Grid Kartu Musik: tampilan keempat kartu identik, hanya Pop yang bisa diklik -->
         <section class="music-grid" id="songGrid">
-            
-           <!-- Kartu 1: pop -->
+
+            <!-- Kartu 1: pop (BISA DIKLIK) -->
             <a class="song-card" href="playlist.html#love-song-section" data-genre="pop">
                 <div class="image-box">
                     <img src="foto/genre pop.jpg" alt="pop">
@@ -73,8 +92,8 @@
                 </div>
             </a>
 
-            <!-- Kartu 2: Jazz -->
-            <a class="song-card" href="#modal-lagu-2" data-genre="jazz">
+            <!-- Kartu 2: Jazz (TIDAK BISA DIKLIK, TAMPILAN SAMA) -->
+            <div class="song-card locked-card" data-genre="jazz">
                 <div class="image-box">
                     <img src="foto/genre jazz.jpg" alt="Jazz">
                 </div>
@@ -86,10 +105,10 @@
                         <span class="duration">4:12</span>
                     </div>
                 </div>
-            </a>
+            </div>
 
-            <!-- Kartu 3: rock -->
-            <a class="song-card" href="#modal-lagu-3" data-genre="rock">
+            <!-- Kartu 3: rock (TIDAK BISA DIKLIK, TAMPILAN SAMA) -->
+            <div class="song-card locked-card" data-genre="rock">
                 <div class="image-box">
                     <img src="foto/genre rock.jpg" alt="rock">
                 </div>
@@ -101,10 +120,10 @@
                         <span class="duration">3:05</span>
                     </div>
                 </div>
-            </a>
+            </div>
 
-            <!-- Kartu 4: Dangdut / Hipdut -->
-            <a class="song-card" href="#modal-lagu-4" data-genre="dangdut">
+            <!-- Kartu 4: Dangdut / Hipdut (TIDAK BISA DIKLIK, TAMPILAN SAMA) -->
+            <div class="song-card locked-card" data-genre="dangdut">
                 <div class="image-box">
                     <img src="foto/genre dangdut.jpg" alt="Dangdut">
                 </div>
@@ -116,57 +135,46 @@
                         <span class="duration">3:50</span>
                     </div>
                 </div>
-            </a>
+            </div>
 
         </section>
     </main>
 
-    <!-- Popup kartu 1: Electric Anthem -->
-    <div id="modal-lagu-1" class="modal-overlay">
-        <div class="modal-box">
-            <a href="#close" class="tombol-tutup">&times;</a>
-            <h2>Electric Anthem</h2>
-            <p class="modal-artist">The Thunderers</p>
-            <div class="list-lagu">
-                <div class="item-lagu">
-                    <span><span class="genre-tag rock">Rock</span> &nbsp;3:45</span>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h2 class="footer-logo">LOOP<span>IFY</span></h2>
+                <p>Discover your favorite music, explore new artists, and find the perfect playlist for every mood. Let music connect you to every moment.</p>
+            </div>
+
+            <div class="footer-column">
+                <h3>Explore</h3>
+                <a href="beranda.html">Home</a>
+                <a href="genre.html">Genre</a>
+                <a href="artist.html">Artist</a>
+                <a href="playlist.html">Playlist</a>
+                <a href="profile.html">Profile</a>
+            </div>
+
+            <div class="footer-column">
+                <h3>Discover Music</h3>
+                <a href="genre.html">Pop</a>
+                <a href="genre.html">Jazz</a>
+                <a href="genre.html">Rock</a>
+                <a href="genre.html">Dangdut / Hipdut</a>
+            </div>
+
+            <div class="footer-column">
+                <h3>About LOOPIFY</h3>
+                <p class="footer-about">A music catalog website made for music lovers to discover genres, artists, and playlists in one place.</p>
+            </div>
         </div>
-    </div>
 
-    <!-- Popup kartu 2: Midnight Lounge -->
-    <div id="modal-lagu-2" class="modal-overlay">
-        <div class="modal-box">
-            <a href="#close" class="tombol-tutup">&times;</a>
-            <h2>Midnight Lounge</h2>
-            <p class="modal-artist">Velvet Notes</p>
-            <div class="list-lagu">
-                <div class="item-lagu">
-                    <span><span class="genre-tag jazz">Jazz</span> &nbsp;4:12</span> 
+        <div class="footer-bottom">
+            <p>&copy; 2026 LOOPIFY. All Rights Reserved.</p>
+            <p>Made with <span class="footer-heart">&hearts;</span> and music.</p>
         </div>
-    </div>
+    </footer>
 
-    <!-- Popup kartu 3: Starlight Dreams -->
-    <div id="modal-lagu-3" class="modal-overlay">
-        <div class="modal-box">
-            <a href="#close" class="tombol-tutup">&times;</a>
-            <h2>Starlight Dreams</h2>
-            <p class="modal-artist">Luna Ray</p>
-            <div class="list-lagu">
-                <div class="item-lagu">
-                    <span><span class="genre-tag pop">Pop</span> &nbsp;3:05</span> 
-          </div>
-    </div>
-
-    <!-- Popup kartu 4: Goyang Asyik (Hipdut) -->
-    <div id="modal-lagu-4" class="modal-overlay">
-        <div class="modal-box">
-            <a href="#close" class="tombol-tutup">&times;</a>
-            <h2>Goyang Asyik (Hipdut)</h2>
-            <p class="modal-artist">Siti & Orkes Ria</p>
-            <div class="list-lagu">
-                <div class="item-lagu">
-                    <span><span class="genre-tag dangdut">Dangdut</span> &nbsp;3:50</span>
-         </div>     
-    </div>
 </body>
 </html>
