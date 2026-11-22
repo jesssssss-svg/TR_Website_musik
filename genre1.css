@@ -26,14 +26,13 @@ header:first-of-type {
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-
 /* Navbar */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px 40px;
-    background-color:rgba(10, 8, 29, 0.7);
+    background-color: rgba(10, 8, 29, 0.7);
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(10px);
 }
@@ -42,12 +41,6 @@ header:first-of-type {
     display: flex;
     align-items: center;
     gap: 12px;
-}
-
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
 
 .logo {
@@ -83,17 +76,14 @@ header:first-of-type {
     letter-spacing: 2px;
     background: linear-gradient(90deg, #edeaf0 0%);
     -webkit-text-fill-color: transparent;
-
-    
 }
 
 .logo-text span {
-   font-size: 26px;
+    font-size: 26px;
     font-weight: 800;
     letter-spacing: 2px;
     background: linear-gradient(90deg, #c084fc);
     -webkit-text-fill-color: transparent;
-    
 }
 
 /* Kotak Pencarian (Search Bar di Kanan Atas) */
@@ -200,6 +190,12 @@ header:first-of-type {
     font-weight: 600;
 }
 
+.filter-btn.disabled-btn,
+.song-card.locked-card {
+    pointer-events: none;
+    user-select: none;
+}
+
 /* Grid Kartu Musik */
 .music-grid {
     display: grid;
@@ -270,24 +266,11 @@ header:first-of-type {
     color: #64748b;
 }
 
-footer {
-    text-align: center;
-    padding: 20px;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-    color: #64748b;
-    font-size: 12px;
-    margin-top: 40px;
-}
-
-
 /* =====================================================
    TAMBAHAN: POPUP LAGU (untuk kartu di genre.html)
    Cara kerja: kartu menuju #modal-lagu-N, dan popup yang
    id-nya cocok tampil lewat :target (tanpa JavaScript)
    ===================================================== */
-
-/* Kartu lagu berupa link: hilangkan warna biru dan garis bawah bawaan link,
-   kursor jadi tangan supaya terlihat bisa diklik */
 a.song-card {
     display: block;
     color: inherit;
@@ -295,7 +278,6 @@ a.song-card {
     cursor: pointer;
 }
 
-/* Lapisan gelap menutupi layar, awalnya disembunyikan */
 .modal-overlay {
     display: none;
     position: fixed;
@@ -307,12 +289,10 @@ a.song-card {
     z-index: 2000;
 }
 
-/* Popup tampil saat id-nya sedang dituju oleh link (:target) */
 .modal-overlay:target {
     display: flex;
 }
 
-/* Kotak popup ungu gelap dengan garis ungu */
 .modal-box {
     position: relative;
     width: 100%;
@@ -327,7 +307,6 @@ a.song-card {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
 }
 
-/* Judul lagu di popup */
 .modal-box h2 {
     color: #c084fc;
     font-size: 24px;
@@ -335,14 +314,12 @@ a.song-card {
     padding-right: 35px;
 }
 
-/* Nama artis di popup */
 .modal-artist {
     color: #94a3b8;
     font-size: 13px;
     margin-bottom: 18px;
 }
 
-/* Tombol silang (x) untuk menutup popup */
 .tombol-tutup {
     position: absolute;
     top: 12px;
@@ -358,7 +335,6 @@ a.song-card {
     color: #c084fc;
 }
 
-/* Daftar lagu dan pemutar audio di dalam popup */
 .list-lagu {
     display: flex;
     flex-direction: column;
