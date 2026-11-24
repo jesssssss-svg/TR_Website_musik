@@ -436,6 +436,10 @@ footer {
     }
 }
 
+/* =================================
+   FILTER PLAYLIST TANPA JAVASCRIPT
+================================= */
+
 /* Menyembunyikan radio button */
 .playlist-filter input[type="radio"] {
     display: none;
@@ -444,9 +448,10 @@ footer {
 /* Tampilan tombol filter */
 .playlist-filter .filter-btn {
     display: inline-block;
+    cursor: pointer;
 }
 
-/* Tampilan tombol saat dipilih */
+/* Warna tombol ketika dipilih */
 #filter-all:checked ~ .genre-filters label[for="filter-all"],
 #filter-study:checked ~ .genre-filters label[for="filter-study"],
 #filter-love:checked ~ .genre-filters label[for="filter-love"],
@@ -458,54 +463,50 @@ footer {
     font-weight: 600;
 }
 
-/* Menyembunyikan semua playlist terlebih dahulu */
-.playlist-filter .music-grid > .playlist-expand {
+/* Sembunyikan semua kartu terlebih dahulu */
+.playlist-filter .music-grid > .playlist-open {
     display: none;
 }
 
-/* Menampilkan semua playlist */
-#filter-all:checked ~ .music-grid > .playlist-expand {
+/* ALL PLAYLIST: tampilkan semua */
+#filter-all:checked ~ .music-grid > .playlist-open {
     display: block;
 }
 
-/* Menampilkan playlist Study Time */
+/* STUDY TIME */
 #filter-study:checked ~ .music-grid > .study-playlist {
     display: block;
 }
 
-/* Menampilkan playlist Love Song */
+/* LOVE SONG */
 #filter-love:checked ~ .music-grid > .love-playlist {
     display: block;
 }
 
-/* Menampilkan playlist Sad Song */
+/* SAD SONG */
 #filter-sad:checked ~ .music-grid > .sad-playlist {
     display: block;
 }
 
-/* Menampilkan playlist Night Drive */
+/* NIGHT DRIVE */
 #filter-night:checked ~ .music-grid > .night-playlist {
     display: block;
 }
 
-/* =========================================
-   LINK DARI GENRE POP KE LOVE SONG
-   ========================================= */
-
-/* Jika Love Song dibuka dari link Genre */
-.music-grid:has(#love-song-section:target) > .playlist-expand {
-    display: none;
+/* Tampilan kartu tetap rapi */
+.playlist-filter .music-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 20px;
 }
 
-/* Menampilkan Love Song saja */
-.music-grid:has(#love-song-section:target) > #love-song-section {
+/* Link kartu */
+.playlist-open {
     display: block;
+    color: inherit;
+    text-decoration: none;
 }
 
-/* Menampilkan isi playlist Love Song */
-#love-song-section:target .playlist-content {
-    display: block;
-}
 
 /* =========================
    FOOTER LOOPIFY
@@ -613,5 +614,164 @@ footer {
     .footer-bottom {
         flex-direction: column;
         align-items: flex-start;
+    }
+}
+
+/* =================================
+   PLAYLIST POPUP / MODAL
+================================= */
+
+/* Link kartu playlist */
+.playlist-open {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Cursor saat diarahkan ke kartu */
+.playlist-open .song-card {
+    cursor: pointer;
+    height: 100%;
+}
+
+/* Background gelap popup */
+.playlist-modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.85);
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+}
+
+/* Menampilkan popup saat playlist diklik */
+.playlist-modal:target {
+    display: flex;
+}
+
+/* Kotak popup */
+.modal-content {
+    position: relative;
+
+    width: 100%;
+    max-width: 700px;
+
+    max-height: 80vh;
+    overflow-y: auto;
+
+    background: #21182e;
+
+    border: 2px solid #a855f7;
+    border-radius: 20px;
+
+    padding: 35px;
+
+    box-shadow: 0 0 25px rgba(168, 85, 247, 0.2);
+}
+
+/* Judul popup */
+.modal-content h2 {
+    color: #c084fc;
+    font-size: 28px;
+    margin-bottom: 25px;
+}
+
+/* Tombol close */
+.close-modal {
+    position: absolute;
+
+    top: 15px;
+    right: 25px;
+
+    color: white;
+    font-size: 32px;
+    font-weight: bold;
+
+    text-decoration: none;
+}
+
+.close-modal:hover {
+    color: #c084fc;
+}
+
+/* Baris lagu */
+.modal-song {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 15px;
+
+    background: #302440;
+
+    border: 1px solid rgba(192, 132, 252, 0.2);
+    border-radius: 12px;
+
+    padding: 13px 18px;
+    margin-bottom: 12px;
+}
+/* Informasi lagu */
+.modal-song .song-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    flex: 1;
+}
+
+/* Judul lagu */
+.modal-song .song-title {
+    color: #f1eafa;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+/* Nama penyanyi di bawah judul */
+.modal-song .song-artist {
+    color: #b9a9c9;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+/* Audio player */
+.modal-song audio {
+    width: 310px;
+    max-width: 65%;
+}
+
+/* Audio player */
+.modal-song audio {
+    width: 310px;
+    max-width: 65%;
+}
+
+/* Tampilan HP */
+@media (max-width: 600px) {
+
+    .modal-content {
+        padding: 30px 18px;
+    }
+
+    .modal-content h2 {
+        font-size: 23px;
+    }
+
+    .modal-song {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .modal-song audio {
+        width: 100%;
+        max-width: 100%;
     }
 }
