@@ -261,9 +261,9 @@ header:first-of-type {
     border-radius: 10px;
 }
 
-.interest-item i {
-    color: #a855f7;
-    font-size: 18px;
+.interest-item span:first-child {
+    color: #c084fc;
+    font-size: 20px;
 }
 
 .interest-item span {
