@@ -775,3 +775,37 @@ footer {
         max-width: 100%;
     }
 }
+
+/* =================================
+   FILTER LOVE SONG DARI HALAMAN GENRE
+================================= */
+
+/* Nonaktifkan warna All Playlist */
+#love-song-section:target
+.genre-filters label[for="filter-all"] {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: #cbd5e1;
+    border-color: rgba(255, 255, 255, 0.1);
+    font-weight: 500;
+}
+
+/* Aktifkan warna Love Song */
+#love-song-section:target
+.genre-filters label[for="filter-love"] {
+    background-color: #a855f7;
+    color: #ffffff;
+    border-color: #a855f7;
+    font-weight: 600;
+}
+
+/* Sembunyikan semua playlist */
+#love-song-section:target
+.music-grid > .playlist-open {
+    display: none;
+}
+
+/* Tampilkan hanya Love Song */
+#love-song-section:target
+.music-grid > .love-playlist {
+    display: block;
+}       
