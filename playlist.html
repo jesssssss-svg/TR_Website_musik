@@ -3,14 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LOOPIFY | Katalog playlist Musik</title>
+
+    <title>LOOPIFY | Katalog Playlist Musik</title>
+
     <link rel="stylesheet" href="playlist.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
+
 <body>
 
-    <!-- NAVBAR -->
     <header>
         <nav class="navbar">
+
             <a href="beranda.html" class="logo-link">
                 <h2 class="logo">LOOP<span>IFY</span></h2>
             </a>
@@ -21,33 +28,47 @@
                 <li><a href="playlist.html">Playlist</a></li>
                 <li><a href="profile.html">Profile</a></li>
             </ul>
+
         </nav>
     </header>
 
     <div class="back-container">
-        <a href="beranda.html" class="back-button">
+        <a href="genre.html" class="back-button">
             <i class="fa-solid fa-arrow-left"></i> Back
         </a>
     </div>
 
-    <!-- SEARCH BAR -->
     <header class="navbar">
-        <div class="logo-container">
-        </div>
+
+        <div class="logo-container"></div>
 
         <div class="search-container">
             <span class="search-icon">⌕</span>
-            <input type="text" placeholder="Search music..."
-                   class="search-input" readonly tabindex="-1">
+
+            <input type="text"
+                   placeholder="Search music..."
+                   class="search-input"
+                   readonly
+                   tabindex="-1">
         </div>
+
     </header>
 
     <main class="main-container">
 
         <section class="hero-section">
+
             <p class="hero-subtitle">WELCOME TO LOOPIFY</p>
-            <h1>Discover Your <span class="loopify-title">Music</span></h1>
-            <p>Explore your favorite music, discover new artists, and find the perfect playlist for every mood.</p>
+
+            <h1>
+                Discover Your <span class="loopify-title">Music</span>
+            </h1>
+
+            <p>
+                Explore your favorite music, discover new artists,
+                and find the perfect playlist for every mood.
+            </p>
+
         </section>
 
         <section class="playlist-filter">
@@ -84,9 +105,10 @@
 
             <section class="music-grid" id="songGrid">
 
-                <details class="playlist-expand study-playlist">
+                <a href="#study-modal"
+                   class="playlist-open study-playlist">
 
-                    <summary class="song-card">
+                    <div class="song-card">
 
                         <div class="image-box">
                             <img src="foto/study_time.png" alt="Study Time">
@@ -98,44 +120,13 @@
                             <div class="card-footer"></div>
                         </div>
 
-                    </summary>
-
-                    <div class="playlist-content">
-
-                        <h2>Study Time Playlist</h2>
-                        <p>Music to accompany your study time.</p>
-                        <div class="playlist-track">
-                            <span>01</span>
-
-                            <div class="track-info">
-                                <h3>CRUEL SUMMER</h3>
-                                <p>Taylor Swift</p>
-
-                                <audio controls>
-                                    <source src="TR_Website_musik/musik/Taylor Swift - Cruel Summer.mp3" type="audio/mpeg">
-                                </audio>
-                            </div>
-                        </div>
-
-                        <div class="playlist-track">
-                            <span>02</span>
-
-                            <div class="track-info">
-                                <h3>EVERYTHING U ARE</h3>
-                                <p>Hindia</p>
-
-                                <audio controls>
-                                    <source src="TR_Website_musik/musik/Hindia - everything u are Lirik Lagu.mp3" type="audio/mpeg">
-                                </audio>
-                            </div>
-                        </div>
-
                     </div>
-                </details>
+                </a>
 
-                <details class="playlist-expand love-playlist" id="love-song-section">
+                <a href="#love-modal"
+                   class="playlist-open love-playlist">
 
-                    <summary class="song-card">
+                    <div class="song-card">
 
                         <div class="image-box">
                             <img src="foto/love song.jpg" alt="Love Song">
@@ -143,47 +134,17 @@
 
                         <div class="song-info">
                             <h3>Love Song</h3>
+                            <p>Romantic Collection</p>
                             <div class="card-footer"></div>
                         </div>
 
-                    </summary>
-
-                    <div class="playlist-content">
-
-                        <h2>Love Song Playlist</h2>
-                        <p>Music to accompany your love song.</p>
-
-                        <div class="playlist-track">
-                            <span>01</span>
-
-                            <div class="track-info">
-                                <h3>NOTHING</h3>
-                                <p>Bruno Major</p>
-
-                                <audio controls>
-                                    <source src="TR_Website_musik/musik/Bruno Major - Nothing (Lyrics).mp3" type="audio/mpeg">
-                                </audio>
-                            </div>
-                        </div>
-                        <div class="playlist-track">
-                            <span>02</span>
-
-                            <div class="track-info">
-                                <h3>AKAD</h3>
-                                <p>Payung Teduh</p>
-
-                                <audio controls>
-                                    <source src="TR_Website_musik/musik/Payung Teduh - Akad (Official Music Video).mp3" type="audio/mpeg">
-                                </audio>
-                            </div>
-                        </div>
-
                     </div>
-                </details>
+                </a>
 
-                <details class="playlist-expand sad-playlist">
+                <a href="#sad-modal"
+                   class="playlist-open sad-playlist">
 
-                    <summary class="song-card">
+                    <div class="song-card">
 
                         <div class="image-box">
                             <img src="foto/sad song.jpg" alt="Sad Song">
@@ -195,46 +156,13 @@
                             <div class="card-footer"></div>
                         </div>
 
-                    </summary>
-
-                    <div class="playlist-content">
-
-                        <h2>Sad Song Playlist</h2>
-                        <p>Music to accompany your sad song.</p>
-
-                        <!-- LAGU 1 -->
-                        <div class="playlist-track">
-                            <span>01</span>
-
-                            <div class="track-info">
-                                <h3>WHEN I WAS YOUR MAN</h3>
-                                <p>Bruno Mars</p>
-
-                                <audio controls>
-                                    <source src="TR_Website_musik/musik/Bruno Mars - When I Was Your Man.mp3" type="audio/mpeg">
-                                </audio>
-                            </div>
-                        </div>
-
-                        <div class="playlist-track">
-                            <span>02</span>
-
-                            <div class="track-info">
-                                <h3>DEJA VU</h3>
-                                <p>Olivia Rodrigo</p>
-
-                                <audio controls>
-                                    <source src="TR_Website_musik/musik/Olivia Rodrigo - deja vu.mp3" type="audio/mpeg">
-                                </audio>
-                            </div>
-                        </div>
-
                     </div>
-                </details>
+                </a>
 
-                <details class="playlist-expand night-playlist">
+                <a href="#night-modal"
+                   class="playlist-open night-playlist">
 
-                    <summary class="song-card">
+                    <div class="song-card">
 
                         <div class="image-box">
                             <img src="foto/night song.jpg" alt="Night Drive">
@@ -246,96 +174,243 @@
                             <div class="card-footer"></div>
                         </div>
 
-                    </summary>
-
-                    <div class="playlist-content">
-
-                        <h2>Night Drive Playlist</h2>
-                        <p>Music for your late night moments.</p>
-
-                        <div class="playlist-track">
-                            <span>01</span>
-
-                            <div class="track-info">
-                                <h3>LOWKEY</h3>
-                                <p>NIKI</p>
-
-                                <audio controls>
-                                    <source src="TR_Website_musik/musik/NIKI - lowkey (Lyrics).mp3" type="audio/mpeg">
-                                </audio>
-                            </div>
-                        </div>
-
-                        <div class="playlist-track">
-                            <span>02</span>
-
-                            <div class="track-info">
-                                <h3>SHAPE OF MY HEART</h3>
-                                <p>Backstreet Boys</p>
-
-                                <audio controls>
-                                    <source src="TR_Website_musik/musik/Shape of My Heart - Backstreet Boys.mp3" type="audio/mpeg">
-                                </audio>
-                            </div>
-                        </div>
-
                     </div>
-                </details>
+                </a>
+
 
             </section>
+
         </section>
+
+        <div id="study-modal" class="playlist-modal">
+
+            <div class="modal-content">
+
+                <a href="#" class="close-modal">&times;</a>
+
+                <h2>Study Time</h2>
+
+                <div class="modal-song">
+
+                    <div class="song-info">
+                        <span class="song-title">01. CRUEL SUMMER</span>
+                        <span class="song-artist">Taylor Swift</span>
+                    </div>
+
+                    <audio controls>
+                        <source src="TR_Website_musik/musik/Taylor Swift - Cruel Summer.mp3"
+                        type="audio/mpeg">
+                    </audio>
+
+                </div>
+
+                <div class="modal-song">
+
+                    <div class="song-info">
+                        <span class="song-title">02. EVERYTHING U ARE</span>
+                        <span class="song-artist">Hindia</span>
+                    </div>
+
+                    <audio controls>
+                        <source src="TR_Website_musik/musik/Hindia - everything u are Lirik Lagu.mp3"
+                        type="audio/mpeg">
+                    </audio>
+
+                </div>
+
+            </div>
+        </div>
+
+        <div id="love-modal" class="playlist-modal">
+
+            <div class="modal-content">
+
+                <a href="#" class="close-modal">&times;</a>
+
+                <h2>Love Song</h2>
+
+                <div class="modal-song">
+
+                    <div class="song-info">
+                        <span class="song-title">01. NOTHING</span>
+                        <span class="song-artist">Bruno Major</span>
+                    </div>
+
+                    <audio controls>
+                        <source src="TR_Website_musik/musik/Bruno Major - Nothing (Lyrics).mp3"
+                        type="audio/mpeg">
+                    </audio>
+
+                </div>
+
+                <div class="modal-song">
+
+                    <div class="song-info">
+                        <span class="song-title">02. AKAD</span>
+                        <span class="song-artist">Payung Teduh</span>
+                    </div>
+
+                    <audio controls>
+                        <source src="TR_Website_musik/musik/Payung Teduh - Akad (Official Music Video).mp3"
+                        type="audio/mpeg">
+                    </audio>
+
+                </div>
+
+            </div>
+        </div>
+
+        <div id="sad-modal" class="playlist-modal">
+
+            <div class="modal-content">
+
+                <a href="#" class="close-modal">&times;</a>
+
+                <h2>Sad Song</h2>
+
+                <div class="modal-song">
+
+                    <div class="song-info">
+                        <span class="song-title">01. WHEN I WAS YOUR MAN</span>
+                        <span class="song-artist">Bruno Mars</span>
+                    </div>
+
+                    <audio controls>
+                        <source src="TR_Website_musik/musik/Bruno Mars - When I Was Your Man.mp3"
+                        type="audio/mpeg">
+                    </audio>
+
+                </div>
+
+                <div class="modal-song">
+
+                    <div class="song-info">
+                        <span class="song-title">02. DEJA VU</span>
+                        <span class="song-artist">Olivia Rodrigo</span>
+                    </div>
+
+                    <audio controls>
+                        <source src="TR_Website_musik/musik/Olivia Rodrigo - deja vu.mp3"
+                        type="audio/mpeg">
+                    </audio>
+
+                </div>
+
+            </div>
+        </div>
+
+        <div id="night-modal" class="playlist-modal">
+
+            <div class="modal-content">
+
+                <a href="#" class="close-modal">&times;</a>
+
+                <h2>Night Drive</h2>
+
+                <div class="modal-song">
+
+                    <div class="song-info">
+                        <span class="song-title">01. LOWKEY</span>
+                        <span class="song-artist">NIKI</span>
+                    </div>
+
+                    <audio controls>
+                        <source src="TR_Website_musik/musik/NIKI - lowkey (Lyrics).mp3"
+                        type="audio/mpeg">
+                    </audio>
+
+                </div>
+
+                <div class="modal-song">
+
+                    <div class="song-info">
+                        <span class="song-title">02. SHAPE OF MY HEART</span>
+                        <span class="song-artist">Backstreet Boys</span>
+                    </div>
+
+                    <audio controls>
+                        <source src="TR_Website_musik/musik/Shape of My Heart - Backstreet Boys.mp3"
+                        type="audio/mpeg">
+                    </audio>
+
+                </div>
+
+            </div>
+        </div>
+
 
     </main>
 
-<footer class="footer">
+    <footer class="footer">
 
-    <div class="footer-container">
+        <div class="footer-container">
 
-        <div class="footer-brand">
-            <h2 class="footer-logo">LOOP<span>IFY</span></h2>
+            <div class="footer-brand">
+
+                <h2 class="footer-logo">
+                    LOOP<span>IFY</span>
+                </h2>
+
+                <p>
+                    Discover your favorite music, explore new artists,
+                    and find the perfect playlist for every mood.
+                    Let music connect you to every moment.
+                </p>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Explore</h3>
+
+                <a href="beranda.html">Home</a>
+                <a href="genre.html">Genre</a>
+                <a href="artist.html">Artist</a>
+                <a href="playlist.html">Playlist</a>
+                <a href="profile.html">Profile</a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Discover Music</h3>
+
+                <a href="genre.html">Pop</a>
+                <a href="genre.html">Jazz</a>
+                <a href="genre.html">Rock</a>
+                <a href="genre.html">Dangdut / Hipdut</a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>About LOOPIFY</h3>
+
+                <p class="footer-about">
+                    A music catalog website made for music lovers
+                    to discover genres, artists, and playlists
+                    in one place.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>&copy; 2026 LOOPIFY. All rights reserved.</p>
 
             <p>
-                Discover your favorite music, explore new artists,
-                and find the perfect playlist for every mood.
-                Let music connect you to every moment.
+                Made with <span class="footer-heart">♥</span> and music.
             </p>
 
         </div>
 
-        <div class="footer-column">
-            <h3>Explore</h3>
-            <a href="beranda.html">Home</a>
-            <a href="genre.html">Genre</a>
-            <a href="artist.html">Artist</a>
-            <a href="playlist.html">Playlist</a>
-            <a href="profile.html">Profile</a>
-        </div>
-
-        <div class="footer-column">
-            <h3>Discover Music</h3>
-            <a href="genre.html">Pop</a>
-            <a href="genre.html">Jazz</a>
-            <a href="genre.html">Rock</a>
-            <a href="genre.html">Dangdut / Hipdut</a>
-        </div>
-
-        <div class="footer-column">
-            <h3>About LOOPIFY</h3>
-            <p class="footer-about">
-                A music catalog website made for music lovers
-                to discover genres, artists, and playlists
-                in one place.
-            </p>
-        </div>
-
-    </div>
-
-    <div class="footer-bottom">
-        <p>&copy; 2026 LOOPIFY. All rights reserved.</p>
-        <p>Made with <span class="footer-heart">♥</span> and music.</p>
-    </div>
-
-</footer>
+    </footer>
 
 </body>
 </html>
