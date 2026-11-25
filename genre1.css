@@ -1,4 +1,3 @@
-/* Pengaturan Dasar */
 * {
     margin: 0;
     padding: 0;
@@ -6,7 +5,6 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Background biru gelap keunguan persis seperti SS */
 body {
     background: linear-gradient(135deg, #0f0c29, #120e38, #0a081d);
     background-attachment: fixed;
@@ -16,7 +14,6 @@ body {
     flex-direction: column;
 }
 
-/* Bar navigasi paling atas (LOOPIFY, Home, Genre, dll.) tetap menempel saat di-scroll */
 header:first-of-type {
     position: sticky;
     top: 0;
@@ -26,7 +23,6 @@ header:first-of-type {
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-/* Navbar */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -69,7 +65,6 @@ header:first-of-type {
     color: #c084fc;
 }
 
-/* Font & Warna LOOPIFY persis seperti SS (Gradasi Pink/Ungu Muda ke Putih) */
 .logo-text {
     font-size: 26px;
     font-weight: 800;
@@ -86,7 +81,6 @@ header:first-of-type {
     -webkit-text-fill-color: transparent;
 }
 
-/* Kotak Pencarian (Search Bar di Kanan Atas) */
 .search-container {
     position: relative;
     width: 260px;
@@ -117,7 +111,6 @@ header:first-of-type {
     font-size: 13px;
 }
 
-/* Tombol Back sejajar dengan Search bar */
 .back-container {
     display: flex;
     align-items: center;
@@ -144,7 +137,6 @@ header:first-of-type {
     background-color: rgba(168, 85, 247, 0.15);
 }
 
-/* Hero Section / Banner Utama Biru Keunguan */
 .main-container {
     max-width: 1200px;
     width: 100%;
@@ -223,7 +215,6 @@ header:first-of-type {
     user-select: none;
 }
 
-/* Grid Kartu Musik */
 .music-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
@@ -293,11 +284,6 @@ header:first-of-type {
     color: #64748b;
 }
 
-/* =====================================================
-   TAMBAHAN: POPUP LAGU (untuk kartu di genre.html)
-   Cara kerja: kartu menuju #modal-lagu-N, dan popup yang
-   id-nya cocok tampil lewat :target (tanpa JavaScript)
-   ===================================================== */
 a.song-card {
     display: block;
     color: inherit;
@@ -391,9 +377,6 @@ a.song-card {
     border-radius: 20px;
 }
 
-/* =========================
-   FOOTER LOOPIFY
-========================= */
 .footer {
     width: 100%;
     background: #0b081b;
@@ -410,7 +393,6 @@ a.song-card {
     flex-wrap: wrap;
 }
 
-/* BRAND */
 .footer-brand {
     max-width: 300px;
 }
@@ -432,7 +414,6 @@ a.song-card {
     line-height: 1.8;
 }
 
-/* FOOTER LINKS */
 .footer-column {
     display: flex;
     flex-direction: column;
@@ -464,7 +445,6 @@ a.song-card {
     max-width: 230px;
 }
 
-/* FOOTER BOTTOM */
 .footer-bottom {
     display: flex;
     justify-content: space-between;
@@ -485,7 +465,6 @@ a.song-card {
     color: #a855f7;
 }
 
-/* RESPONSIVE FOOTER */
 @media screen and (max-width: 768px) {
     .footer-container {
         gap: 35px;
