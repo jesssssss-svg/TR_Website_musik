@@ -179,7 +179,7 @@ a.artist-card {
 /* =====================================================
     POPUP LAGU  (<div class="modal-overlay"> dari HTML)
    Cara kerja: kartu menuju #modal-nama-artis, dan popup
-   yang id-nya cocok akan tampil lewat :target (tanpa JavaScript)
+   yang id-nya cocok akan tampil lewat :target 
    ===================================================== */
 
 /* Lapisan gelap menutupi seluruh layar. Awalnya disembunyikan (display: none).
@@ -278,13 +278,6 @@ a.artist-card {
     height: 34px;
     max-width: 240px;
     border-radius: 20px;
-}
-
-/* Tulisan "Lagu belum tersedia." untuk artis yang belum punya lagu */
-.info-lagu {
-    color: #aaa;
-    text-align: center;
-    padding: 10px 0;
 }
 
 
