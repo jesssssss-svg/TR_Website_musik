@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOOPIFY | Katalog Genre Musik</title>
+    <link rel="stylesheet" href="coba_genre1.css">
+</head>
+<body>
+
+    <!-- Header / Navbar dengan Search Bar di Kanan Atas -->
+    <header class="navbar">
+        <div class="logo-container">
+            <span class="logo-text">LOOP<span>IFY</span></span>
+        </div>
+
+        <div class="search-container">
+            <span class="search-icon">&#128269;</span>
+            <input type="text" id="searchInput" placeholder="Cari judul lagu atau artis..." class="search-input">
+        </div>
+    </header>
+
+    <!-- Konten Utama -->
+    <main class="main-container">
+        <section class="hero-section">
+            <p class="hero-subtitle">WELCOME TO LOOPIFY</p>
+            <h1>Discover Your <span class="loopify-title">Music</span></h1>
+            <p>Eksplorasi lagu pilihan berdasarkan genre favorit Anda. Klik tombol play pada kartu untuk mulai mendengarkan.</p>
+        </section>
+
+        <!-- Tombol Filter Genre -->
+        <div class="genre-filters">
+            <button type="button" onclick="filterGenre('all', this)" class="filter-btn active">All Genre</button>
+            <button type="button" onclick="filterGenre('pop', this)" class="filter-btn">Pop</button>
+            <button type="button" onclick="filterGenre('rock', this)" class="filter-btn">Rock</button>
+            <button type="button" onclick="filterGenre('jazz', this)" class="filter-btn">Jazz</button>
+            <button type="button" onclick="filterGenre('dangdut', this)" class="filter-btn">Dangdut / Hipdut</button>
+        </div>
+
+        <!-- Grid Kartu Musik -->
+        <section class="music-grid" id="songGrid"></section>
+    </main>
+
+    <!-- Pemutar Audio Bawah -->
+    <div class="bottom-player" id="bottomPlayer">
+        <div class="now-playing-info">
+            <img id="playerCover" src="" alt="Cover">
+            <div class="now-playing-text">
+                <h4 id="playerTitle">Judul Lagu</h4>
+                <p id="playerArtist">Nama Artis</p>
+                <span id="playerStatus" class="status-badge">Siap diputar</span>
+            </div>
+        </div>
+        <audio id="audioPlayer" controls preload="none"></audio>
+        <button type="button" class="close-player-btn" onclick="closePlayer()" title="Tutup Pemutar">&#10005;</button>
+    </div>
+
+    <script>
+    // 1. Generator Cover Album SVG Otomatis
+    function createCoverSVG(title, color1, color2, symbol) {
+        const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400">
+            <defs>
+                <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="${color1}"/>
+                    <stop offset="100%" stop-color="${color2}"/>
+                </linearGradient>
+            </defs>
+            <rect width="400" height="400" fill="url(#g)"/>
+            <circle cx="200" cy="175" r="75" fill="rgba(255,255,255,0.15)"/>
+            <text x="200" y="198" font-size="72" text-anchor="middle" fill="#ffffff" font-family="sans-serif">${symbol}</text>
+            <text x="200" y="310" font-size="22" font-weight="bold" text-anchor="middle" fill="#ffffff" font-family="sans-serif">${title}</text>
+        </svg>`;
+        return "data:image/svg+xml;charset=utf-8," + encodeURIComponent(svg);
+    }
+
+    // 2. Katalog Lagu dengan Link Audio Publik yang Stabil
+    const allSongs = [
+        // POP
+        {
+            id: 1,
+            title: "Titik Nadir",
+            artist: "Kahitna",
+            genre: "pop",
+            duration: "0:30",
+            cover: createCoverSVG("TITIK NADIR", "#db2777", "#831843", "🎤"),
+            audioUrl: "https://upload.wikimedia.org/wikipedia/commons/b/b2/Enri_-_Acoustic_Guitar_Improvisation.ogg"
+        },
+        // ROCK
+        {
+            id: 2,
+            title: "A Little Piece of Heaven",
+            artist: "Avenged Sevenfold",
+            genre: "rock",
+            duration: "0:35",
+            cover: createCoverSVG("A LITTLE PIECE", "#dc2626", "#7f1d1d", "🎸"),
+            audioUrl: "https://upload.wikimedia.org/wikipedia/commons/9/91/Guitar_sample.ogg"
+        },
+        // DANGDUT / HIPDUT
+        {
+            id: 3,
+            title: "Bang Jono",
+            artist: "Zaskia Gotik",
+            genre: "dangdut",
+            duration: "0:28",
+            cover: createCoverSVG("BANG JONO", "#059669", "#064e3b", "🥁"),
+            audioUrl: "https://upload.wikimedia.org/wikipedia/commons/c/c8/Drum_beat_sample.ogg"
+        },
+        // JAZZ
+        {
+            id: 4,
+            title: "Januari",
+            artist: "Glenn Fredly",
+            genre: "jazz",
+            duration: "0:32",
+            cover: createCoverSVG("JANUARI", "#d97706", "#78350f", "🎷"),
+            audioUrl: "https://upload.wikimedia.org/wikipedia/commons/a/a3/Saxophone_riff.ogg"
+        }
+    ];
+
+    let currentGenre = 'all';
+    let currentSongId = null;
+
+    const audioPlayer = document.getElementById('audioPlayer');
+    const bottomPlayer = document.getElementById('bottomPlayer');
+    const playerStatus = document.getElementById('playerStatus');
+
+    // 3. Render Kartu Lagu
+    function renderCards() {
+        const grid = document.getElementById('songGrid');
+        const term = document.getElementById('searchInput').value.toLowerCase();
+
+        const filteredSongs = allSongs.filter(song => {
+            const matchGenre = (currentGenre === 'all' || song.genre === currentGenre);
+            const matchSearch = song.title.toLowerCase().includes(term) ||
+                                song.artist.toLowerCase().includes(term) ||
+                                song.genre.toLowerCase().includes(term);
+            return matchGenre && matchSearch;
+        });
+
+        if (filteredSongs.length === 0) {
+            grid.innerHTML = '<p class="empty-msg">Lagu atau artis tidak ditemukan.</p>';
+            return;
+        }
+
+        grid.innerHTML = filteredSongs.map(song => {
+            const isPlaying = (currentSongId === song.id && !audioPlayer.paused);
+            const btnSymbol = isPlaying ? '&#10074;&#10074;' : '&#9654;';
+
+            return `
+                <div class="song-card ${isPlaying ? 'playing' : ''}" data-genre="${song.genre}">
+                    <div class="image-box">
+                        <img src="${song.cover}" alt="${song.title}">
+                        <button type="button" class="play-btn" onclick="playMusic(${song.id})">
+                            ${btnSymbol}
+                        </button>
+                    </div>
+                    <div class="song-info">
+                        <h3>${song.title}</h3>
+                        <p class="artist-name">${song.artist}</p>
+                        <div class="card-footer">
+                            <span class="genre-tag ${song.genre}">${song.genre}</span>
+                            <span class="duration">${song.duration}</span>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }).join('');
+    }
+
+    // 4. Filter Genre
+    function filterGenre(genre, btnElement) {
+        currentGenre = genre;
+        document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+        btnElement.classList.add('active');
+        renderCards();
+    }
+
+    // 5. Live Search
+    document.getElementById('searchInput').addEventListener('input', renderCards);
+
+    // 6. Fungsi Putar Musik Real Streaming
+    function playMusic(songId) {
+        const song = allSongs.find(item => item.id === songId);
+        if (!song) return;
+
+        if (currentSongId === song.id) {
+            if (audioPlayer.paused) {
+                audioPlayer.play();
+            } else {
+                audioPlayer.pause();
+            }
+            renderCards();
+            return;
+        }
+
+        // Ganti ke lagu baru
+        currentSongId = song.id;
+        document.getElementById('playerCover').src = song.cover;
+        document.getElementById('playerTitle').textContent = song.title;
+        document.getElementById('playerArtist').textContent = song.artist;
+        playerStatus.textContent = "Memutar musik...";
+        
+        audioPlayer.src = song.audioUrl;
+        audioPlayer.load();
+        bottomPlayer.classList.add('active');
+
+        audioPlayer.play().then(() => {
+            renderCards();
+        }).catch(err => {
+            console.warn("Pemutaran audio dicegah:", err);
+            alert("Gagal memutar audio. Pastikan koneksi internet aktif.");
+        });
+
+        renderCards();
+    }
+
+    // 7. Tutup Pemutar
+    function closePlayer() {
+        audioPlayer.pause();
+        audioPlayer.currentTime = 0;
+        currentSongId = null;
+        bottomPlayer.classList.remove('active');
+        renderCards();
+    }
+
+    audioPlayer.addEventListener('play', renderCards);
+    audioPlayer.addEventListener('pause', renderCards);
+    audioPlayer.addEventListener('ended', () => {
+        currentSongId = null;
+        renderCards();
+    });
+
+    renderCards();
+</script>
+</body>
+</html>

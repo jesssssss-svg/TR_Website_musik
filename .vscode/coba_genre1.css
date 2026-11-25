@@ -1,0 +1,374 @@
+/* Reset & Dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #0f172a;
+    color: #f8fafc;
+    padding-bottom: 110px;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 6%;
+    background-color: rgba(15, 23, 42, 0.92);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid #1e293b;
+}
+
+.logo-text {
+    font-size: 1.6rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: #ffffff;
+}
+
+.logo-text span {
+    color: #22c55e;
+}
+
+/* Search Bar */
+.search-container {
+    position: relative;
+    width: 290px;
+}
+
+.search-icon {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.9rem;
+    color: #94a3b8;
+}
+
+.search-input {
+    width: 100%;
+    padding: 10px 15px 10px 38px;
+    border-radius: 999px;
+    border: 1px solid #334155;
+    background-color: #1e293b;
+    color: #ffffff;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.search-input:focus {
+    border-color: #22c55e;
+}
+
+/* Main & Hero Section */
+.main-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 32px 6%;
+}
+
+.hero-section {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.hero-subtitle {
+    color: #22c55e;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+}
+
+.hero-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 12px;
+}
+
+.loopify-title {
+    color: #22c55e;
+}
+
+.hero-section p {
+    color: #94a3b8;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.5;
+}
+
+/* Tombol Filter Genre */
+.genre-filters {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 35px;
+}
+
+.filter-btn {
+    padding: 10px 22px;
+    border-radius: 999px;
+    border: 1px solid #334155;
+    background-color: #1e293b;
+    color: #cbd5e1;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.filter-btn:hover {
+    background-color: #334155;
+    color: #ffffff;
+}
+
+.filter-btn.active {
+    background-color: #22c55e;
+    border-color: #22c55e;
+    color: #0f172a;
+}
+
+/* Grid Kartu Musik */
+.music-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(235px, 1fr));
+    gap: 24px;
+}
+
+.empty-msg {
+    grid-column: 1 / -1;
+    text-align: center;
+    color: #94a3b8;
+    padding: 40px 0;
+    font-size: 1.1rem;
+}
+
+/* Kartu Lagu */
+.song-card {
+    background-color: #1e293b;
+    border-radius: 14px;
+    padding: 15px;
+    border: 1px solid transparent;
+    transition: transform 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
+}
+
+.song-card:hover {
+    transform: translateY(-5px);
+    background-color: #273549;
+}
+
+.song-card.playing {
+    border-color: #22c55e;
+    box-shadow: 0 8px 24px rgba(34, 197, 94, 0.22);
+}
+
+.image-box {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 14px;
+}
+
+.image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Tombol Play di Kartu */
+.play-btn {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    border: none;
+    background-color: #22c55e;
+    color: #0f172a;
+    font-size: 1.1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.45);
+    opacity: 0;
+    transform: translateY(8px);
+    transition: all 0.25s ease;
+}
+
+.song-card:hover .play-btn,
+.song-card.playing .play-btn {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.play-btn:hover {
+    transform: scale(1.08);
+    background-color: #4ade80;
+}
+
+/* Info Lagu */
+.song-info h3 {
+    font-size: 1.05rem;
+    margin-bottom: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.artist-name {
+    font-size: 0.88rem;
+    color: #94a3b8;
+    margin-bottom: 12px;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Badge Warna per Genre */
+.genre-tag {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 6px;
+}
+
+.genre-tag.pop {
+    background-color: rgba(236, 72, 153, 0.2);
+    color: #f472b6;
+}
+
+.genre-tag.rock {
+    background-color: rgba(239, 68, 68, 0.2);
+    color: #f87171;
+}
+
+.genre-tag.jazz {
+    background-color: rgba(245, 158, 11, 0.2);
+    color: #fbbf24;
+}
+
+.genre-tag.dangdut {
+    background-color: rgba(16, 185, 129, 0.2);
+    color: #34d399;
+}
+
+.duration {
+    font-size: 0.82rem;
+    color: #94a3b8;
+}
+
+/* Pemutar Audio Bawah */
+.bottom-player {
+    position: fixed;
+    bottom: -120px;
+    left: 0;
+    width: 100%;
+    background-color: #1e293b;
+    border-top: 1px solid #334155;
+    padding: 12px 6%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    z-index: 200;
+    transition: bottom 0.3s ease;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.45);
+}
+
+.bottom-player.active {
+    bottom: 0;
+}
+
+.now-playing-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 220px;
+}
+
+.now-playing-info img {
+    width: 52px;
+    height: 52px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.now-playing-text h4 {
+    font-size: 0.95rem;
+    color: #ffffff;
+}
+
+.now-playing-text p {
+    font-size: 0.8rem;
+    color: #94a3b8;
+    margin-bottom: 3px;
+}
+
+.status-badge {
+    display: inline-block;
+    font-size: 0.7rem;
+    padding: 2px 7px;
+    border-radius: 4px;
+    background-color: rgba(34, 197, 94, 0.15);
+    color: #4ade80;
+}
+
+#audioPlayer {
+    flex: 1;
+    max-width: 520px;
+    height: 38px;
+}
+
+.close-player-btn {
+    background: none;
+    border: none;
+    color: #94a3b8;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 6px 10px;
+    border-radius: 6px;
+    transition: color 0.2s, background-color 0.2s;
+}
+
+.close-player-btn:hover {
+    color: #ffffff;
+    background-color: #334155;
+}
+
+/* Responsif Layar Kecil */
+@media (max-width: 680px) {
+    .navbar {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .search-container {
+        width: 100%;
+    }
+
+    .bottom-player {
+        flex-wrap: wrap;
+        padding: 10px 4%;
+    }
+
+    #audioPlayer {
+        order: 3;
+        width: 100%;
+        max-width: 100%;
+    }
+}
