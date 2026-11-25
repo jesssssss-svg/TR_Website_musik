@@ -76,7 +76,6 @@ header:first-of-type {
     color: #c084fc;
 }
 
-/* Back di kiri, Search bar di pojok kanan dalam satu baris */
 .back-container {
     display: flex;
     justify-content: space-between;
