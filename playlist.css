@@ -28,7 +28,7 @@ header:first-of-type {
     justify-content: space-between;
     align-items: center;
     padding: 20px 40px;
-    background-color: rgba(10, 8, 29, 0.7);
+   background-color: #0a081d;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(10px);
 }
@@ -92,12 +92,12 @@ header:first-of-type {
     align-items: center;
     gap: 8px;
     padding: 8px 16px;
-    border-radius: 12px;
+    border-radius: 16px;
     font-size: 13px;
-    font-weight: 500;
+    font-weight: 600;
     text-decoration: none;
-    color: #cbd5e1;
-    background-color: rgba(255, 255, 255, 0.05);
+    color: #ffffff;
+    background-color:  #1b1930;
     border: 1px solid rgba(255, 255, 255, 0.12);
     transition: all 0.2s;
     flex-shrink: 0;
@@ -118,7 +118,7 @@ header:first-of-type {
 
 .search-input {
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.07);
+    background-color:  #201d36;
     border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 20px;
     padding: 8px 16px 8px 38px;
@@ -494,4 +494,26 @@ header:first-of-type {
 
 .footer-heart {
     color: #a855f7;
+}
+
+body:has(#love-song:target) .playlist-filter .music-grid > .playlist-open {
+    display: none;
+}
+
+body:has(#love-song:target) .playlist-filter .music-grid > .love-playlist {
+    display: block;
+}
+
+body:has(#love-song:target) label[for="filter-all"] {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: #cbd5e1;
+    border-color: rgba(255, 255, 255, 0.1);
+    font-weight: 500;
+}
+
+body:has(#love-song:target) label[for="filter-love"] {
+    background-color: #a855f7;
+    color: #ffffff;
+    border-color: #a855f7;
+    font-weight: 600;
 }
